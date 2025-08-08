@@ -1,0 +1,26 @@
+{
+  "name": "colin-website",
+  "version": "1.0.0",
+  "description": "Colin's Professional Building Services Website - Static site with XML-driven configuration",
+  "scripts": {
+    "build": "python build-config.py",
+    "build:azure": "python build-config.py",
+    "start": "python server.py",
+    "dev": "python build-config.py --dev",
+    "watch": "python build-config.py --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/colin-website.git"
+  },
+  "keywords": [
+    "static-site",
+    "building-services",
+    "xml-configuration"
+  ],
+  "author": "Colin's Building Services",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
