@@ -1,0 +1,407 @@
+/**
+ * Theme System for Colin's Professional Building Services
+ * Three UX-optimized themes designed for building services industry
+ */
+
+/* ===== THEME VARIABLES ===== */
+
+/* Theme 1: Professional Corporate - Trust & Reliability */
+[data-theme="professional"] {
+    /* Primary Colors - Navy & Blue for trust and premium feel */
+    --color-primary: #1e3a5f;
+    --color-secondary: #4a90d9;
+    --color-accent: #3182ce;
+    --color-background: #ffffff;
+    --color-text: #2c3e50;
+    --color-light-gray: #f8f9fb;
+    --color-dark-gray: #6c757d;
+    
+    /* Typography - Clean, professional fonts */
+    --font-primary: 'Inter', 'Segoe UI', sans-serif;
+    --font-heading: 'Merriweather', serif;
+    --font-base-size: 16px;
+    
+    /* Spacing & Layout */
+    --section-padding: 5rem 0;
+    --card-padding: 2.5rem;
+    --border-radius: 12px;
+    --box-shadow: 0 8px 25px rgba(30, 58, 95, 0.08);
+    --box-shadow-hover: 0 15px 35px rgba(30, 58, 95, 0.15);
+    
+    /* Interactive Elements */
+    --button-primary-bg: var(--color-secondary);
+    --button-primary-hover: #3182ce;
+    --card-gradient: linear-gradient(145deg, #ffffff 0%, #fafbfc 100%);
+    --hero-gradient: linear-gradient(135deg, var(--color-primary) 0%, #2c5282 100%);
+}
+
+/* Theme 2: Modern Craftsman - Skill & Innovation */
+[data-theme="craftsman"] {
+    /* Primary Colors - Professional blue tones */
+    --color-primary: #2d3748;
+    --color-secondary: #3182ce;
+    --color-accent: #4299e1;
+    --color-background: #ffffff;
+    --color-text: #1a202c;
+    --color-light-gray: #f7fafc;
+    --color-dark-gray: #4a5568;
+    
+    /* Typography - Strong, readable fonts */
+    --font-primary: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
+    --font-heading: 'Playfair Display', serif;
+    --font-base-size: 17px;
+    
+    /* Spacing & Layout */
+    --section-padding: 4.5rem 0;
+    --card-padding: 2rem;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 20px rgba(45, 55, 72, 0.12);
+    --box-shadow-hover: 0 10px 30px rgba(45, 55, 72, 0.2);
+    
+    /* Interactive Elements */
+    --button-primary-bg: var(--color-secondary);
+    --button-primary-hover: #2c5282;
+    --card-gradient: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    --hero-gradient: linear-gradient(135deg, var(--color-primary) 0%, #1a202c 100%);
+}
+
+/* Theme 3: Community Local - Personal & Approachable */
+[data-theme="community"] {
+    /* Primary Colors - Clean blue palette */
+    --color-primary: #2b6cb0;
+    --color-secondary: #4299e1;
+    --color-accent: #63b3ed;
+    --color-background: #fffffe;
+    --color-text: #2d3748;
+    --color-light-gray: #f0f9ff;
+    --color-dark-gray: #4a5568;
+    
+    /* Typography - Friendly, readable fonts */
+    --font-primary: 'Open Sans', 'system-ui', sans-serif;
+    --font-heading: 'Poppins', sans-serif;
+    --font-base-size: 16px;
+    
+    /* Spacing & Layout */
+    --section-padding: 4rem 0;
+    --card-padding: 2rem;
+    --border-radius: 16px;
+    --box-shadow: 0 6px 20px rgba(49, 130, 206, 0.1);
+    --box-shadow-hover: 0 12px 28px rgba(49, 130, 206, 0.15);
+    
+    /* Interactive Elements */
+    --button-primary-bg: var(--color-secondary);
+    --button-primary-hover: #3182ce;
+    --card-gradient: linear-gradient(145deg, #ffffff 0%, #f0f9ff 100%);
+    --hero-gradient: linear-gradient(135deg, var(--color-primary) 0%, #2b6cb0 100%);
+}
+
+/* ===== THEME-SPECIFIC COMPONENT STYLES ===== */
+
+/* Enhanced Card System with Better Contrast */
+.card {
+    background: var(--card-gradient);
+    border: 2px solid transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--color-secondary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--box-shadow-hover);
+    border-color: var(--color-secondary);
+}
+
+/* Improved Text Contrast */
+.card-content p {
+    color: var(--color-text);
+    font-weight: 400;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+.card-title {
+    color: var(--color-primary);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.card-subtitle {
+    color: var(--color-dark-gray);
+    font-weight: 500;
+}
+
+/* Enhanced Button System */
+.btn {
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0.025em;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary {
+    background: var(--button-primary-bg);
+    border: none;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:hover {
+    background: var(--button-primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary:hover {
+    background: var(--color-primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-white {
+    background: white;
+    color: var(--color-primary);
+    border: 2px solid white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-white:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--color-primary);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Service Cards Enhanced */
+.service-card {
+    background: var(--card-gradient);
+    border: 2px solid var(--color-light-gray);
+}
+
+.service-card:hover {
+    border-color: var(--color-secondary);
+    transform: translateY(-10px);
+}
+
+.service-image::after {
+    background: linear-gradient(45deg, var(--color-primary) 0%, transparent 70%);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.service-card:hover .service-image::after {
+    opacity: 0.7;
+}
+
+.service-price {
+    color: var(--color-secondary);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.service-duration {
+    color: var(--color-dark-gray);
+    font-weight: 500;
+}
+
+/* Enhanced Hero Section */
+.hero {
+    background: var(--hero-gradient);
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Theme-Specific Accreditation Styling */
+.accreditation-item {
+    background: var(--card-gradient);
+    border: 2px solid var(--color-light-gray);
+    transition: all 0.3s ease;
+}
+
+.accreditation-item:hover {
+    border-color: var(--color-secondary);
+    transform: scale(1.05);
+}
+
+/* Contact Form Enhancement */
+.form-control {
+    border: 2px solid var(--color-light-gray);
+    border-radius: var(--border-radius);
+    font-size: var(--font-base-size);
+    transition: all 0.3s ease;
+    background: rgba(255,255,255,0.8);
+}
+
+.form-control:focus {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.1);
+    outline: none;
+}
+
+/* Section Headers */
+.section-title {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    font-weight: 700;
+    position: relative;
+}
+
+.section-title::after {
+    background: var(--color-secondary);
+    height: 4px;
+    border-radius: 2px;
+}
+
+/* Theme-Specific Animations */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.fade-in-scale {
+    animation: fadeInScale 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== THEME SWITCHER STYLES ===== */
+.theme-switcher {
+    position: relative;
+    margin-left: 1rem;
+}
+
+.theme-dropdown {
+    background: rgba(255,255,255,0.95);
+    border: 2px solid var(--color-light-gray);
+    border-radius: var(--border-radius);
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.theme-dropdown:hover {
+    border-color: var(--color-secondary);
+    background: rgba(255,255,255,1);
+}
+
+.theme-dropdown:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.1);
+}
+
+/* ===== RESPONSIVE THEME ADJUSTMENTS ===== */
+@media (max-width: 768px) {
+    [data-theme] {
+        --section-padding: 3rem 0;
+        --card-padding: 1.5rem;
+        --font-base-size: 15px;
+    }
+    
+    .theme-switcher {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+    
+    .card:hover {
+        transform: translateY(-4px);
+    }
+    
+    .service-card:hover {
+        transform: translateY(-5px);
+    }
+}
+
+/* ===== ACCESSIBILITY ENHANCEMENTS ===== */
+@media (prefers-reduced-motion: reduce) {
+    .card, .btn, .service-card, .accreditation-item {
+        transition: none;
+    }
+    
+    .card:hover, .service-card:hover {
+        transform: none;
+    }
+    
+    .fade-in-scale {
+        animation: none;
+    }
+}
+
+@media (prefers-contrast: high) {
+    [data-theme] {
+        --color-text: #000000;
+        --color-background: #ffffff;
+    }
+    
+    .card {
+        border: 3px solid var(--color-primary);
+    }
+    
+    .btn {
+        border-width: 3px;
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    [data-theme] {
+        --color-primary: #000000;
+        --color-secondary: #666666;
+        --color-text: #000000;
+        --color-background: #ffffff;
+    }
+    
+    .card, .btn {
+        box-shadow: none;
+        border: 1px solid #000000;
+    }
+}

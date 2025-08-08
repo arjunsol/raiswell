@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML String Usage Example</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; }
+        .example { margin: 2rem 0; padding: 1rem; border: 1px solid #ccc; }
+        .old { background: #fdf2f0; }
+        .new { background: #d5f4e6; }
+        pre { background: #f4f4f4; padding: 1rem; overflow-x: auto; }
+        code { background: #e8e8e8; padding: 0.2rem; }
+    </style>
+</head>
+<body>
+    <h1>XML String Externalization Example</h1>
+    <p>This page demonstrates how to replace hardcoded strings with XML configuration data.</p>
+
+    <div class="example old">
+        <h2>❌ Before: Hardcoded Navigation (Old Way)</h2>
+        <pre><code>&lt;div class="logo"&gt;
+    Colin's Building Services
+&lt;/div&gt;
+
+&lt;ul class="nav-menu"&gt;
+    &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="services.html"&gt;Services&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="gallery.html"&gt;Gallery&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="accreditation.html"&gt;Accreditations&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="booking.html"&gt;Book Consultation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+
+    <div class="example new">
+        <h2>✅ After: XML-Driven Navigation (New Way)</h2>
+        <pre><code>&lt;div class="logo" data-config="company.name"&gt;
+    Loading...
+&lt;/div&gt;
+
+&lt;ul class="nav-menu" id="main-navigation"&gt;
+    &lt;!-- Navigation items populated dynamically from XML --&gt;
+&lt;/ul&gt;</code></pre>
+        
+        <h3>JavaScript Implementation:</h3>
+        <pre><code>// Populate navigation from XML configuration
+async function populateNavigation() {
+    await window.siteConfig.loadConfig();
+    
+    // Update brand name
+    const logo = document.querySelector('[data-config="company.name"]');
+    if (logo) {
+        logo.textContent = window.siteConfig.getValue('company.name');
+    }
+    
+    // Get navigation items from XML
+    const navigation = window.siteConfig.getNavigation();
+    const navMenu = document.getElementById('main-navigation');
+    
+    if (navigation.items && navMenu) {
+        const items = [
+            { href: 'index.html', key: 'home' },
+            { href: 'services.html', key: 'services' },
+            { href: 'gallery.html', key: 'gallery' },
+            { href: 'accreditation.html', key: 'accreditations' },
+            { href: 'contact.html', key: 'contact' },
+            { href: 'booking.html', key: 'booking' }
+        ];
+        
+        navMenu.innerHTML = items.map(item => `
+            &lt;li&gt;&lt;a href="${item.href}" class="nav-link"&gt;${navigation.items[item.key]}&lt;/a&gt;&lt;/li&gt;
+        `).join('');
+    }
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', populateNavigation);</code></pre>
+    </div>
+
+    <div class="example">
+        <h2>🎯 Live Demo: XML String Usage</h2>
+        <p>Here's how it looks when populated from the actual XML configuration:</p>
+        
+        <div style="border: 1px solid #ccc; padding: 1rem; margin: 1rem 0;">
+            <div class="logo" id="demo-brand" style="font-weight: bold; margin-bottom: 1rem;">
+                Loading...
+            </div>
+            
+            <ul id="demo-navigation" style="list-style: none; padding: 0; display: flex; gap: 1rem;">
+                <!-- Will be populated dynamically -->
+            </ul>
+        </div>
+        
+        <h3>Button Text Examples:</h3>
+        <div style="margin: 1rem 0;">
+            <button id="demo-get-quote" class="demo-btn">Loading...</button>
+            <button id="demo-book-consultation" class="demo-btn">Loading...</button>
+            <button id="demo-contact-us" class="demo-btn">Loading...</button>
+        </div>
+        
+        <h3>Message Examples:</h3>
+        <div style="margin: 1rem 0;">
+            <p><strong>Loading Message:</strong> <span id="demo-loading-msg">Loading...</span></p>
+            <p><strong>Error Message:</strong> <span id="demo-error-msg">Loading...</span></p>
+            <p><strong>Success Message:</strong> <span id="demo-success-msg">Loading...</span></p>
+        </div>
+        
+        <h3>Label Examples:</h3>
+        <div style="margin: 1rem 0;">
+            <p><strong>Call Us:</strong> <span id="demo-call-us">Loading...</span></p>
+            <p><strong>Email Us:</strong> <span id="demo-email-us">Loading...</span></p>
+            <p><strong>Opening Hours:</strong> <span id="demo-opening-hours">Loading...</span></p>
+        </div>
+    </div>
+
+    <div class="example">
+        <h2>📋 Form Field Example</h2>
+        <p>Dynamic form generation from XML configuration:</p>
+        
+        <form id="demo-form" style="border: 1px solid #ccc; padding: 1rem;">
+            <!-- Form fields will be generated from XML -->
+        </form>
+    </div>
+
+    <!-- Load the compiled configuration and XML parser -->
+    <script src="js/compiled-config.js"></script>
+    <script src="js/xml-parser.js"></script>
+    
+    <script>
+        async function populateDemo() {
+            try {
+                // Load configuration
+                await window.siteConfig.loadConfig();
+                
+                // Populate brand name
+                const brand = document.getElementById('demo-brand');
+                if (brand) {
+                    brand.textContent = window.siteConfig.getValue('company.name');
+                }
+                
+                // Populate navigation
+                const navigation = window.siteConfig.getNavigation();
+                const navDemo = document.getElementById('demo-navigation');
+                
+                if (navigation.items && navDemo) {
+                    const items = [
+                        { href: 'index.html', key: 'home' },
+                        { href: 'services.html', key: 'services' },
+                        { href: 'gallery.html', key: 'gallery' },
+                        { href: 'accreditation.html', key: 'accreditations' },
+                        { href: 'contact.html', key: 'contact' },
+                        { href: 'booking.html', key: 'booking' }
+                    ];
+                    
+                    navDemo.innerHTML = items.map(item => `
+                        <li><a href="${item.href}" style="text-decoration: none; color: #2C3E50;">${navigation.items[item.key]}</a></li>
+                    `).join('');
+                }
+                
+                // Populate button text
+                document.getElementById('demo-get-quote').textContent = window.siteConfig.getButtonText('get-quote');
+                document.getElementById('demo-book-consultation').textContent = window.siteConfig.getButtonText('book-consultation');
+                document.getElementById('demo-contact-us').textContent = window.siteConfig.getButtonText('contact-us');
+                
+                // Populate messages
+                document.getElementById('demo-loading-msg').textContent = window.siteConfig.getMessage('loading');
+                document.getElementById('demo-error-msg').textContent = window.siteConfig.getMessage('error.general');
+                document.getElementById('demo-success-msg').textContent = window.siteConfig.getMessage('success.general');
+                
+                // Populate labels
+                document.getElementById('demo-call-us').textContent = window.siteConfig.getLabel('call-us');
+                document.getElementById('demo-email-us').textContent = window.siteConfig.getLabel('email-us');
+                document.getElementById('demo-opening-hours').textContent = window.siteConfig.getLabel('opening-hours');
+                
+                // Populate form example
+                const formFields = window.siteConfig.getFormFields('contact-form');
+                const demoForm = document.getElementById('demo-form');
+                
+                if (formFields.length > 0 && demoForm) {
+                    const fieldHTML = formFields.slice(0, 3).map(field => {
+                        if (field.type === 'select') {
+                            const options = Array.isArray(field.options?.option) ? field.options.option : [field.options?.option || ''];
+                            return `
+                                <div style="margin: 1rem 0;">
+                                    <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">${field.label}</label>
+                                    <select style="width: 100%; padding: 0.5rem;">
+                                        ${options.map(option => `<option value="${option}">${option}</option>`).join('')}
+                                    </select>
+                                </div>
+                            `;
+                        } else {
+                            return `
+                                <div style="margin: 1rem 0;">
+                                    <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">${field.label}</label>
+                                    <input type="${field.type}" placeholder="${field.placeholder || ''}" ${field.required === 'true' ? 'required' : ''} style="width: 100%; padding: 0.5rem; border: 1px solid #ccc;">
+                                </div>
+                            `;
+                        }
+                    }).join('');
+                    
+                    demoForm.innerHTML = fieldHTML + `
+                        <button type="submit" style="background: #2C3E50; color: white; padding: 0.5rem 1rem; border: none; margin-top: 1rem;">
+                            ${window.siteConfig.getButtonText('get-quote')}
+                        </button>
+                    `;
+                }
+                
+            } catch (error) {
+                console.error('Failed to populate demo:', error);
+                document.body.innerHTML += `<div style="color: red; margin: 2rem 0;"><strong>Error:</strong> ${error.message}</div>`;
+            }
+        }
+        
+        // Add some basic styling for demo buttons
+        const style = document.createElement('style');
+        style.textContent = `
+            .demo-btn {
+                background: #2C3E50;
+                color: white;
+                border: none;
+                padding: 0.5rem 1rem;
+                margin: 0.25rem;
+                cursor: pointer;
+                border-radius: 4px;
+            }
+            .demo-btn:hover {
+                background: #34495e;
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Initialize demo on page load
+        document.addEventListener('DOMContentLoaded', populateDemo);
+    </script>
+</body>
+</html>

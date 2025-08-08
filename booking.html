@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book a free consultation with Colin's Professional Building Services. Online appointment booking for building projects across London and South East England.">
+    <meta name="keywords" content="book consultation builder, appointment booking london, free building consultation orpington kent">
+    <meta name="author" content="Colin's Professional Building Services">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Roboto+Slab:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <link rel="stylesheet" href="css/modals.css">
+    <link rel="stylesheet" href="css/calendar.css">
+    
+    <title>Book Consultation | Colin's Professional Building Services</title>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-container">
+                    <div class="logo">
+                        <img src="images/hero/company-logo.png" alt="Colin's Professional Building Services" style="display: none;">
+                        Colin's Building Services
+                    </div>
+                    
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="services.html" class="nav-link">Services</a></li>
+                        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                        <li><a href="accreditation.html" class="nav-link">Accreditations</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                        <li><a href="booking.html" class="nav-link active">Book Consultation</a></li>
+                    </ul>
+                    
+                    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                        ☰
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section" style="padding-top: 8rem; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); color: white;">
+        <div class="container">
+            <div class="text-center">
+                <h1 class="hero-title" style="color: white;">Book Your Free Consultation</h1>
+                <p class="hero-subtitle" style="opacity: 0.9;">Schedule a meeting with our professional building team</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Types -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Choose Your Consultation Type</h2>
+                <p class="section-subtitle">All consultations are completely free with no obligation</p>
+            </div>
+            
+            <div class="grid grid-2" style="align-items: stretch;">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon" style="color: var(--color-secondary);">🏠</div>
+                        <h3 class="card-title">Home Visit Consultation</h3>
+                        <p class="card-subtitle">60-90 minutes • Free</p>
+                    </div>
+                    <div class="card-content">
+                        <p>Comprehensive on-site assessment where we visit your property to discuss your project, take measurements, and provide initial design ideas.</p>
+                        
+                        <h4 style="margin-top: 1rem; margin-bottom: 0.5rem;">What's included:</h4>
+                        <ul style="font-size: 0.9rem;">
+                            <li>Site survey and measurements</li>
+                            <li>Initial design consultation</li>
+                            <li>Budget and timeline discussion</li>
+                            <li>Planning permission advice</li>
+                            <li>Material recommendations</li>
+                            <li>Written summary and next steps</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary consultation-type" data-type="home-visit">Select Home Visit</button>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon" style="color: var(--color-accent);">💼</div>
+                        <h3 class="card-title">Office Consultation</h3>
+                        <p class="card-subtitle">45-60 minutes • Free</p>
+                    </div>
+                    <div class="card-content">
+                        <p>Meet us at our Orpington office to discuss your project ideas, review examples of our work, and get initial advice and estimates.</p>
+                        
+                        <h4 style="margin-top: 1rem; margin-bottom: 0.5rem;">What's included:</h4>
+                        <ul style="font-size: 0.9rem;">
+                            <li>Project discussion and planning</li>
+                            <li>Portfolio review</li>
+                            <li>Initial cost estimates</li>
+                            <li>Material samples viewing</li>
+                            <li>Timeline planning</li>
+                            <li>Home visit booking (if needed)</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-secondary consultation-type" data-type="office-visit">Select Office Visit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section class="section" style="background-color: var(--color-light-gray);">
+        <div class="container">
+            <div class="grid grid-2" style="align-items: start;">
+                <div>
+                    <h2 class="section-title" style="text-align: left;">Schedule Your Appointment</h2>
+                    <p class="section-subtitle" style="text-align: left;">Choose a convenient time that works for you. We'll confirm your appointment within 2 hours.</p>
+                    
+                    <!-- Interactive Calendar Widget -->
+                    <div id="calendar-container">
+                        <!-- Calendar will be populated by calendar.js -->
+                    </div>
+                    
+                    <div class="card" style="margin-top: 2rem;">
+                        <h4 style="margin-bottom: 1rem; color: var(--color-primary);">⏰ Available Times</h4>
+                        <div style="margin-bottom: 1rem;">
+                            <strong>Monday - Friday:</strong><br>
+                            9:00 AM - 5:00 PM
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <strong>Saturday:</strong><br>
+                            9:00 AM - 3:00 PM
+                        </div>
+                        <div>
+                            <strong>Sunday:</strong><br>
+                            Emergency consultations only
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <form id="booking-form" class="card" style="background: white;">
+                        <h3 style="margin-bottom: 1.5rem; color: var(--color-primary);">Book Your Consultation</h3>
+                        
+                        <div id="consultation-type-display" style="background: var(--color-light-gray); padding: 1rem; border-radius: var(--border-radius); margin-bottom: 1.5rem; display: none;">
+                            <strong>Selected:</strong> <span id="selected-type"></span>
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 1rem;">
+                            <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Your Name *</label>
+                            <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-light-gray); border-radius: var(--border-radius); font-size: 1rem;">
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 1rem;">
+                            <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email Address *</label>
+                            <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-light-gray); border-radius: var(--border-radius); font-size: 1rem;">
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 1rem;">
+                            <label for="phone" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-light-gray); border-radius: var(--border-radius); font-size: 1rem;" placeholder="Best number to reach you">
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 1rem;">
+                            <label for="address" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Property Address *</label>
+                            <input type="text" id="address" name="address" required style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-light-gray); border-radius: var(--border-radius); font-size: 1rem;" placeholder="Full address including postcode">
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 1rem;">
+                            <label for="preferred-date" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Preferred Date *</label>
+                            <input type="date" id="preferred-date" name="preferred-date" required style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-light-gray); border-radius: var(--border-radius); font-size: 1rem;">
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 1rem;">
+                            <label for="preferred-time" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Preferred Time *</label>
+                            <select id="preferred-time" name="preferred-time" required style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-light-gray); border-radius: var(--border-radius); font-size: 1rem;">
+                                <option value="">Select time slot</option>
+                                <option value="09:00">9:00 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="13:00">1:00 PM</option>
+                                <option value="14:00">2:00 PM</option>
+                                <option value="15:00">3:00 PM</option>
+                                <option value="16:00">4:00 PM</option>
+                                <option value="17:00">5:00 PM (Mon-Fri only)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 1rem;">
+                            <label for="alternative-date" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Alternative Date</label>
+                            <input type="date" id="alternative-date" name="alternative-date" style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-light-gray); border-radius: var(--border-radius); font-size: 1rem;">
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 1rem;">
+                            <label for="project-type" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Project Type</label>
+                            <select id="project-type" name="project-type" style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-light-gray); border-radius: var(--border-radius); font-size: 1rem;">
+                                <option value="">Select project type</option>
+                                <option value="extension">Home Extension</option>
+                                <option value="kitchen">Kitchen Renovation</option>
+                                <option value="bathroom">Bathroom Renovation</option>
+                                <option value="general">General Building Work</option>
+                                <option value="multiple">Multiple Projects</option>
+                                <option value="other">Other/Not Sure</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Additional Information</label>
+                            <textarea id="message" name="message" rows="4" style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-light-gray); border-radius: var(--border-radius); font-size: 1rem; resize: vertical;" placeholder="Tell us more about your project, any specific requirements, or questions you have..."></textarea>
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label style="display: flex; align-items: flex-start; cursor: pointer;">
+                                <input type="checkbox" name="consent" required style="margin-right: 0.5rem; margin-top: 0.2rem;">
+                                <span style="font-size: 0.9rem;">I consent to being contacted about my booking and have read the privacy policy. I understand this is a free consultation with no obligation. *</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">
+                            Request Consultation Booking
+                        </button>
+                        
+                        <p style="text-align: center; font-size: 0.8rem; color: #666; margin-top: 1rem;">
+                            * We'll confirm your appointment within 2 hours during business hours.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What to Expect -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What to Expect</h2>
+                <p class="section-subtitle">Here's how your consultation will work</p>
+            </div>
+            
+            <div class="grid grid-4">
+                <div class="card text-center">
+                    <div class="card-icon" style="color: var(--color-secondary);">1️⃣</div>
+                    <h3 class="card-title">Book Online</h3>
+                    <p>Submit your booking request using our simple form above.</p>
+                </div>
+                
+                <div class="card text-center">
+                    <div class="card-icon" style="color: var(--color-secondary);">2️⃣</div>
+                    <h3 class="card-title">We Confirm</h3>
+                    <p>We'll call within 2 hours to confirm your appointment details.</p>
+                </div>
+                
+                <div class="card text-center">
+                    <div class="card-icon" style="color: var(--color-secondary);">3️⃣</div>
+                    <h3 class="card-title">Consultation</h3>
+                    <p>Meet with our professional team to discuss your project.</p>
+                </div>
+                
+                <div class="card text-center">
+                    <div class="card-icon" style="color: var(--color-secondary);">4️⃣</div>
+                    <h3 class="card-title">Get Quote</h3>
+                    <p>Receive a detailed written quote within 24 hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preparation Tips -->
+    <section class="section" style="background-color: var(--color-light-gray);">
+        <div class="container">
+            <div class="grid grid-2">
+                <div>
+                    <h2 class="section-title" style="text-align: left;">How to Prepare</h2>
+                    <p class="section-subtitle" style="text-align: left;">Get the most from your consultation with these preparation tips</p>
+                    
+                    <div class="card" style="margin-top: 2rem;">
+                        <h4 style="margin-bottom: 1rem; color: var(--color-primary);">📋 Before Your Consultation</h4>
+                        <ul>
+                            <li>Think about your project goals and must-haves</li>
+                            <li>Consider your budget range (even a rough idea helps)</li>
+                            <li>Look at inspiration photos or examples</li>
+                            <li>Note any specific requirements or challenges</li>
+                            <li>Prepare a list of questions you'd like to ask</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="card" style="background: var(--color-secondary); color: white;">
+                        <h3 style="color: white; margin-bottom: 1.5rem;">📸 Helpful Documents to Have Ready</h3>
+                        
+                        <div style="margin-bottom: 1rem;">
+                            <strong>For Home Visits:</strong>
+                            <ul style="margin-top: 0.5rem;">
+                                <li>Property deeds or lease documents</li>
+                                <li>Any existing plans or drawings</li>
+                                <li>Previous planning permissions</li>
+                                <li>Building regulations certificates</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="margin-bottom: 1rem;">
+                            <strong>For Office Visits:</strong>
+                            <ul style="margin-top: 0.5rem;">
+                                <li>Photos of the project area</li>
+                                <li>Rough measurements (if available)</li>
+                                <li>Inspiration images or sketches</li>
+                                <li>Property layout drawings</li>
+                            </ul>
+                        </div>
+                        
+                        <p style="font-size: 0.9rem; opacity: 0.9;">Don't worry if you don't have everything - we can work with whatever information you have!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Booking -->
+    <section class="section" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); color: white;">
+        <div class="container">
+            <div class="text-center">
+                <h2 style="color: white; margin-bottom: 1rem;">🚨 Need Urgent Help?</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">For emergency building issues that can't wait for a scheduled consultation</p>
+                
+                <div class="btn-group">
+                    <a href="tel:+447700900999" class="btn btn-large" style="background: white; color: #e74c3c;">📞 Emergency: +44 7700 900999</a>
+                    <a href="contact.html?emergency=true" class="btn btn-secondary btn-large" style="border-color: white; color: white;">Emergency Contact Form</a>
+                </div>
+                
+                <div style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.8;">
+                    <p>Available 24/7 for genuine emergencies • Response within 2 hours</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Colin's Building Services</h3>
+                    <p>Professional construction services with over 15 years of experience. Quality workmanship, competitive prices, and exceptional customer service.</p>
+                    <div class="social-links">
+                        <!-- Social links will be populated dynamically -->
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html#extensions">Home Extensions</a></li>
+                        <li><a href="services.html#kitchens">Kitchen Fitting</a></li>
+                        <li><a href="services.html#bathrooms">Bathroom Renovations</a></li>
+                        <li><a href="services.html#general">General Building</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="gallery.html">Project Gallery</a></li>
+                        <li><a href="accreditation.html">Certifications</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="booking.html">Book Consultation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>📞 <a href="tel:+447700900123" data-phone>+44 7700 900123</a></p>
+                    <p>✉️ <a href="mailto:colin@colinbuilds.co.uk" data-email>colin@colinbuilds.co.uk</a></p>
+                    <p>📍 <span data-address>45 High Street<br>Orpington, BR6 0JH</span></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-copyright>&copy; 2024 Colin's Professional Building Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/xml-parser.js"></script>
+    <script src="js/feature-manager.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/theme-switcher.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/booking-integration.js"></script>
+    
+    <script>
+        // Consultation type selection
+        document.addEventListener('DOMContentLoaded', function() {
+            const consultationBtns = document.querySelectorAll('.consultation-type');
+            const typeDisplay = document.getElementById('consultation-type-display');
+            const selectedTypeSpan = document.getElementById('selected-type');
+            
+            consultationBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Reset all buttons
+                    consultationBtns.forEach(b => {
+                        b.classList.remove('btn-primary');
+                        b.classList.add('btn-secondary');
+                    });
+                    
+                    // Highlight selected button  
+                    btn.classList.remove('btn-secondary');
+                    btn.classList.add('btn-primary');
+                    
+                    // Show selection
+                    const type = btn.dataset.type;
+                    const typeName = type === 'home-visit' ? 'Home Visit Consultation' : 'Office Consultation';
+                    selectedTypeSpan.textContent = typeName;
+                    typeDisplay.style.display = 'block';
+                    
+                    // Add hidden input to form
+                    let hiddenInput = document.getElementById('consultation-type-input');
+                    if (!hiddenInput) {
+                        hiddenInput = document.createElement('input');
+                        hiddenInput.type = 'hidden';
+                        hiddenInput.id = 'consultation-type-input';
+                        hiddenInput.name = 'consultation-type';
+                        document.getElementById('booking-form').appendChild(hiddenInput);
+                    }
+                    hiddenInput.value = type;
+                    
+                    // Scroll to form
+                    document.getElementById('booking-form').scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                });
+            });
+            
+            // Set minimum date to today
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('preferred-date').min = today;
+            document.getElementById('alternative-date').min = today;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Theme demonstration for Colin's Professional Building Services website - Three UX-optimized themes designed for building services industry.">
+    <title>Theme Demo | Colin's Professional Building Services</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Source+Sans+Pro:wght@400;600;700&family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/themes.css">
+    
+    <style>
+        .theme-demo-section {
+            padding: 3rem 0;
+            border-bottom: 2px solid var(--color-light-gray);
+        }
+        
+        .theme-info {
+            background: var(--card-gradient);
+            border: 2px solid var(--color-secondary);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .theme-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .theme-feature {
+            background: rgba(255,255,255,0.5);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--color-light-gray);
+        }
+        
+        .demo-components {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .keyboard-shortcut {
+            background: var(--color-light-gray);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            font-family: monospace;
+            font-weight: 600;
+            color: var(--color-primary);
+            border: 1px solid var(--color-secondary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-container">
+                    <div class="logo">
+                        <strong>Theme Demo</strong>
+                    </div>
+                    
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">← Back to Site</a></li>
+                    </ul>
+                    
+                    <!-- Theme switcher will be added here automatically -->
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Theme Introduction -->
+    <section class="section" style="padding-top: 8rem; background: var(--hero-gradient); color: white;">
+        <div class="container">
+            <div class="text-center">
+                <h1 class="hero-title" style="color: white;">UX Theme Showcase</h1>
+                <p class="hero-subtitle" style="opacity: 0.9;">Three professionally designed themes for building services</p>
+                <p style="margin-top: 1rem; opacity: 0.8;">Use the dropdown in the header to switch between themes</p>
+                <div style="margin-top: 2rem;">
+                    <span class="keyboard-shortcut">Ctrl + Shift + T</span>
+                    <small style="display: block; margin-top: 0.5rem; opacity: 0.7;">Keyboard shortcut for theme modal</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Theme Info -->
+    <section class="theme-demo-section">
+        <div class="container">
+            <div class="theme-info">
+                <h2 id="current-theme-name">Professional Corporate</h2>
+                <p id="current-theme-description">Trust & reliability focused design</p>
+                
+                <div class="theme-features">
+                    <div class="theme-feature">
+                        <h4>Color Psychology</h4>
+                        <p id="theme-colors">Navy & Gold for trust and premium feel</p>
+                    </div>
+                    <div class="theme-feature">
+                        <h4>Typography</h4>
+                        <p id="theme-fonts">Inter & Merriweather for clean professionalism</p>
+                    </div>
+                    <div class="theme-feature">
+                        <h4>Target Audience</h4>
+                        <p id="theme-audience">Corporate clients seeking premium services</p>
+                    </div>
+                    <div class="theme-feature">
+                        <h4>UX Focus</h4>
+                        <p id="theme-focus">Trust building and credibility</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Component Demonstrations -->
+    <section class="theme-demo-section">
+        <div class="container">
+            <h2 class="section-title">Component Showcase</h2>
+            
+            <div class="demo-components">
+                <!-- Buttons Demo -->
+                <div class="card">
+                    <h3 class="card-title">Buttons & Interactive Elements</h3>
+                    <div class="card-content">
+                        <div class="btn-group">
+                            <button class="btn btn-primary">Primary Button</button>
+                            <button class="btn btn-secondary">Secondary Button</button>
+                            <button class="btn btn-primary btn-large">Large Button</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Cards Demo -->
+                <div>
+                    <h3 style="margin-bottom: 2rem;">Service Cards</h3>
+                    <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                        <div class="card service-card">
+                            <div class="service-image" style="background-image: url('images/services/extension-placeholder.svg')"></div>
+                            <div class="card-header">
+                                <div class="card-icon">🏠</div>
+                                <h3 class="card-title">Home Extensions</h3>
+                            </div>
+                            <div class="card-content">
+                                <p>Professional extension services with planning permission support.</p>
+                                <div class="service-price">£15,000 - £50,000</div>
+                                <div class="service-duration">Duration: 4-12 weeks</div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-primary">Get Quote</button>
+                            </div>
+                        </div>
+                        
+                        <div class="card service-card">
+                            <div class="service-image" style="background-image: url('images/services/kitchen-placeholder.svg')"></div>
+                            <div class="card-header">
+                                <div class="card-icon">🍽️</div>
+                                <h3 class="card-title">Kitchen Fitting</h3>
+                            </div>
+                            <div class="card-content">
+                                <p>Complete kitchen design and installation with modern appliances.</p>
+                                <div class="service-price">£8,000 - £25,000</div>
+                                <div class="service-duration">Duration: 1-3 weeks</div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-primary">Get Quote</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Elements Demo -->
+                <div class="card">
+                    <h3 class="card-title">Form Elements</h3>
+                    <div class="card-content">
+                        <div style="display: grid; gap: 1rem;">
+                            <input type="text" class="form-control" placeholder="Text Input" style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-light-gray); border-radius: var(--border-radius);">
+                            
+                            <select class="form-control" style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-light-gray); border-radius: var(--border-radius);">
+                                <option>Select an option</option>
+                                <option>Home Extensions</option>
+                                <option>Kitchen Fitting</option>
+                                <option>Bathroom Renovations</option>
+                            </select>
+                            
+                            <textarea class="form-control" rows="3" placeholder="Message" style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-light-gray); border-radius: var(--border-radius); resize: vertical;"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Typography Demo -->
+                <div class="card">
+                    <h1 style="margin-bottom: 0.5rem;">Heading 1 - Main Title</h1>
+                    <h2 style="margin-bottom: 0.5rem;">Heading 2 - Section Title</h2>
+                    <h3 style="margin-bottom: 0.5rem;">Heading 3 - Subsection</h3>
+                    <h4 style="margin-bottom: 1rem;">Heading 4 - Card Title</h4>
+                    
+                    <p>This is a paragraph of body text demonstrating the readability and contrast of the current theme. The text should be easily readable with good contrast against the background.</p>
+                    
+                    <p style="color: var(--color-dark-gray);">This is secondary text in a darker gray color, often used for subtitles and less important information.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Theme Comparison -->
+    <section class="theme-demo-section">
+        <div class="container">
+            <h2 class="section-title">Theme Comparison</h2>
+            
+            <div class="grid grid-3">
+                <div class="card">
+                    <h3 class="card-title">🏢 Professional Corporate</h3>
+                    <div class="card-content">
+                        <p><strong>Best for:</strong> Established companies targeting corporate clients</p>
+                        <p><strong>Colors:</strong> Navy blue & gold</p>
+                        <p><strong>Feel:</strong> Trustworthy, premium, established</p>
+                        <p><strong>Typography:</strong> Clean, professional serif/sans combo</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">🔨 Modern Craftsman</h3>
+                    <div class="card-content">
+                        <p><strong>Best for:</strong> Skilled craftsmen showcasing expertise</p>
+                        <p><strong>Colors:</strong> Charcoal & red accents</p>
+                        <p><strong>Feel:</strong> Skilled, innovative, reliable</p>
+                        <p><strong>Typography:</strong> Strong, readable fonts</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">🏘️ Community Local</h3>
+                    <div class="card-content">
+                        <p><strong>Best for:</strong> Local builders with personal approach</p>
+                        <p><strong>Colors:</strong> Warm blue & orange</p>
+                        <p><strong>Feel:</strong> Friendly, approachable, local</p>
+                        <p><strong>Typography:</strong> Friendly, rounded fonts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="text-center">
+                <p>&copy; 2024 Colin's Professional Building Services - Theme Demonstration</p>
+                <p style="margin-top: 1rem; opacity: 0.8;">
+                    <a href="index.html" style="color: var(--color-secondary);">← Return to Main Website</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/xml-parser.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/theme-switcher.js"></script>
+    
+    <script>
+        // Update theme info when theme changes
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeInfo = {
+                professional: {
+                    name: 'Professional Corporate',
+                    description: 'Trust & reliability focused design',
+                    colors: 'Navy blue & gold for trust and premium feel',
+                    fonts: 'Inter & Merriweather for clean professionalism', 
+                    audience: 'Corporate clients seeking premium services',
+                    focus: 'Trust building and credibility'
+                },
+                craftsman: {
+                    name: 'Modern Craftsman',
+                    description: 'Skill & innovation emphasis',
+                    colors: 'Charcoal & red for strength and expertise',
+                    fonts: 'Source Sans Pro & Playfair for readability',
+                    audience: 'Homeowners valuing craftsmanship',
+                    focus: 'Skill demonstration and innovation'
+                },
+                community: {
+                    name: 'Community Local',
+                    description: 'Personal & approachable feel',
+                    colors: 'Warm blue & orange for friendliness',
+                    fonts: 'Open Sans & Poppins for approachability',
+                    audience: 'Local community and family clients',
+                    focus: 'Personal connection and accessibility'
+                }
+            };
+            
+            function updateThemeInfo() {
+                const currentTheme = document.documentElement.getAttribute('data-theme') || 'professional';
+                const info = themeInfo[currentTheme];
+                
+                if (info) {
+                    document.getElementById('current-theme-name').textContent = info.name;
+                    document.getElementById('current-theme-description').textContent = info.description;
+                    document.getElementById('theme-colors').textContent = info.colors;
+                    document.getElementById('theme-fonts').textContent = info.fonts;
+                    document.getElementById('theme-audience').textContent = info.audience;
+                    document.getElementById('theme-focus').textContent = info.focus;
+                }
+            }
+            
+            // Initial update
+            setTimeout(updateThemeInfo, 500);
+            
+            // Listen for theme changes
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+                        updateThemeInfo();
+                    }
+                });
+            });
+            
+            observer.observe(document.documentElement, {
+                attributes: true,
+                attributeFilter: ['data-theme']
+            });
+        });
+    </script>
+</body>
+</html>
