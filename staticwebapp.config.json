@@ -1,0 +1,31 @@
+{
+  "routes": [
+    {
+      "route": "/*",
+      "serve": "/index.html",
+      "statusCode": 200
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": [
+      "/images/*.{png,jpg,gif,svg}",
+      "/css/*.css",
+      "/js/*.js",
+      "/config/*.xml"
+    ]
+  },
+  "globalHeaders": {
+    "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:;",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "SAMEORIGIN"
+  },
+  "mimeTypes": {
+    ".json": "application/json",
+    ".xml": "application/xml",
+    ".svg": "image/svg+xml"
+  },
+  "platform": {
+    "apiRuntime": "python:3.9"
+  }
+}
