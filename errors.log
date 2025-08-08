@@ -1,0 +1,16 @@
+services.html:105   GET http://localhost:8000/images/gallery/extension-modern.jpg 404 (File not found)
+services.html:136   GET http://localhost:8000/images/gallery/kitchen-contemporary.jpg 404 (File not found)
+services.html:167   GET http://localhost:8000/images/gallery/bathroom-luxury.jpg 404 (File not found)
+services.html:198   GET http://localhost:8000/images/gallery/general-work.jpg 404 (File not found)
+services.html:31   GET http://localhost:8000/images/hero/company-logo.png 404 (File not found)
+main.js:43 Site initialized successfully
+[NEW] Explain Console errors by using Copilot in Edge: click
+         
+         to explain an error. 
+        Learn more
+        Don't show again
+company-logo.png:1   GET http://localhost:8000/images/hero/company-logo.png 404 (File not found)
+general-work.jpg:1   GET http://localhost:8000/images/gallery/general-work.jpg 404 (File not found)
+bathroom-luxury.jpg:1   GET http://localhost:8000/images/gallery/bathroom-luxury.jpg 404 (File not found)
+kitchen-contemporary.jpg:1   GET http://localhost:8000/images/gallery/kitchen-contemporary.jpg 404 (File not found)
+extension-modern.jpg:1   GET http://localhost:8000/images/gallery/extension-modern.jpg 404 (File not found)

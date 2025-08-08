@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feature Toggle Demo | Colin's Building Services</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Roboto+Slab:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <link rel="stylesheet" href="css/modals.css">
+    
+    <style>
+        .demo-panel {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: white;
+            border: 2px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            max-height: 70vh;
+            overflow-y: auto;
+            z-index: 10000;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            min-width: 300px;
+        }
+        
+        .demo-panel h3 {
+            margin-top: 0;
+            color: #2C3E50;
+        }
+        
+        .toggle-section {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        .toggle-section h4 {
+            margin: 0 0 10px 0;
+            color: #4A90D9;
+            font-size: 14px;
+        }
+        
+        .toggle-control {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+            font-size: 13px;
+        }
+        
+        .toggle-switch {
+            position: relative;
+            width: 40px;
+            height: 20px;
+            background: #ddd;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .toggle-switch.active {
+            background: #4A90D9;
+        }
+        
+        .toggle-switch::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 16px;
+            height: 16px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        
+        .toggle-switch.active::after {
+            transform: translateX(20px);
+        }
+        
+        .demo-actions {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .demo-btn {
+            background: #4A90D9;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+            font-size: 12px;
+        }
+        
+        .demo-btn:hover {
+            background: #3182CE;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-left: 8px;
+        }
+        
+        .status-indicator.enabled {
+            background: #28a745;
+        }
+        
+        .status-indicator.disabled {
+            background: #dc3545;
+        }
+        
+        .close-demo {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- Demo Control Panel -->
+    <div class="demo-panel" id="demo-panel">
+        <button class="close-demo" onclick="document.getElementById('demo-panel').style.display='none'">×</button>
+        <h3>🔧 Feature Toggle Demo</h3>
+        <p style="font-size: 12px; color: #666; margin-bottom: 15px;">
+            Toggle features on/off to see the impact on the website. Changes apply immediately.
+        </p>
+        
+        <!-- Core Components -->
+        <div class="toggle-section">
+            <h4>Core Page Components</h4>
+            <div class="toggle-control">
+                <span>Hero Section</span>
+                <div class="toggle-switch active" data-feature="hero-section">
+                    <span class="status-indicator enabled"></span>
+                </div>
+            </div>
+            <div class="toggle-control">
+                <span>Services Section</span>
+                <div class="toggle-switch active" data-feature="services-section">
+                    <span class="status-indicator enabled"></span>
+                </div>
+            </div>
+            <div class="toggle-control">
+                <span>Testimonials</span>
+                <div class="toggle-switch active" data-feature="testimonials-section">
+                    <span class="status-indicator enabled"></span>
+                </div>
+            </div>
+            <div class="toggle-control">
+                <span>Accreditations</span>
+                <div class="toggle-switch active" data-feature="accreditations-section">
+                    <span class="status-indicator enabled"></span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Interactive Features -->
+        <div class="toggle-section">
+            <h4>Interactive Features</h4>
+            <div class="toggle-control">
+                <span>Chatbot</span>
+                <div class="toggle-switch active" data-feature="chatbot">
+                    <span class="status-indicator enabled"></span>
+                </div>
+            </div>
+            <div class="toggle-control">
+                <span>Calendar Booking</span>
+                <div class="toggle-switch active" data-feature="calendar-booking">
+                    <span class="status-indicator enabled"></span>
+                </div>
+            </div>
+            <div class="toggle-control">
+                <span>Theme Switcher</span>
+                <div class="toggle-switch active" data-feature="theme-switcher">
+                    <span class="status-indicator enabled"></span>
+                </div>
+            </div>
+            <div class="toggle-control">
+                <span>Quick Quote Modal</span>
+                <div class="toggle-switch active" data-feature="quick-quote-modal">
+                    <span class="status-indicator enabled"></span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Gallery Features -->
+        <div class="toggle-section">
+            <h4>Gallery Features</h4>
+            <div class="toggle-control">
+                <span>Image Gallery</span>
+                <div class="toggle-switch active" data-feature="gallery-page.image-gallery">
+                    <span class="status-indicator enabled"></span>
+                </div>
+            </div>
+            <div class="toggle-control">
+                <span>Category Filter</span>
+                <div class="toggle-switch active" data-feature="gallery-page.category-filter">
+                    <span class="status-indicator enabled"></span>
+                </div>
+            </div>
+            <div class="toggle-control">
+                <span>Instagram Feed</span>
+                <div class="toggle-switch active" data-feature="gallery-page.instagram-feed">
+                    <span class="status-indicator enabled"></span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- UI Components -->
+        <div class="toggle-section">
+            <h4>UI Components</h4>
+            <div class="toggle-control">
+                <span>Mobile Menu</span>
+                <div class="toggle-switch active" data-feature="navigation.mobile-menu">
+                    <span class="status-indicator enabled"></span>
+                </div>
+            </div>
+            <div class="toggle-control">
+                <span>Footer Social Links</span>
+                <div class="toggle-switch active" data-feature="footer.social-links">
+                    <span class="status-indicator enabled"></span>
+                </div>
+            </div>
+            <div class="toggle-control">
+                <span>Footer Contact Info</span>
+                <div class="toggle-switch active" data-feature="footer.contact-info">
+                    <span class="status-indicator enabled"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="demo-actions">
+            <button class="demo-btn" onclick="resetAllToggles()">Reset All</button>
+            <button class="demo-btn" onclick="disableAll()">Disable All</button>
+            <button class="demo-btn" onclick="enableAll()">Enable All</button>
+        </div>
+        <p style="font-size: 11px; color: #888; margin-top: 10px;">
+            💡 Try different combinations to see how the site adapts
+        </p>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-container">
+                    <div class="logo">
+                        <img src="images/hero/company-logo.png" alt="Colin's Professional Building Services" style="display: none;">
+                        Colin's Building Services
+                    </div>
+                    
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="services.html" class="nav-link">Services</a></li>
+                        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                        <li><a href="accreditation.html" class="nav-link">Accreditations</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                        <li><a href="booking.html" class="nav-link">Book Consultation</a></li>
+                    </ul>
+                    
+                    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                        ☰
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section section" style="padding-top: 8rem; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); color: white;">
+        <div class="container">
+            <div class="hero-content text-center">
+                <h1 class="hero-title" style="color: white;">Feature Toggle Demo</h1>
+                <p class="hero-subtitle" style="opacity: 0.9;">See how XML feature toggles control website components</p>
+                <div class="hero-actions" style="margin-top: 2rem;">
+                    <button class="btn btn-primary btn-large" data-quote-trigger>Get Free Quote</button>
+                    <a href="booking.html" class="btn btn-secondary btn-large">Book Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Professional building services tailored to your needs</p>
+            </div>
+            
+            <div class="services-grid" data-services>
+                <!-- Services will be populated dynamically -->
+                <div class="service-placeholder">Loading services...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section section" style="background-color: var(--color-light-gray);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">Real feedback from satisfied customers</p>
+            </div>
+            
+            <div class="testimonials-container" data-testimonials>
+                <!-- Testimonials will be populated dynamically -->
+                <div class="testimonial-placeholder">Loading testimonials...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accreditations Section -->
+    <section class="accreditations-section section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Fully Accredited & Insured</h2>
+                <p class="section-subtitle">Your peace of mind is our priority</p>
+            </div>
+            
+            <div class="accreditations-grid" data-accreditations>
+                <!-- Accreditations will be populated dynamically -->
+                <div class="accreditation-placeholder">Loading certifications...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section section" style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); color: white;">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title" style="color: white;">Ready to Get Started?</h2>
+                <p class="section-subtitle" style="opacity: 0.9;">Contact us today for your free consultation</p>
+                
+                <div class="btn-group">
+                    <a href="tel:+447700900123" class="btn btn-large" style="background: white; color: var(--color-primary);">📞 Call Now</a>
+                    <a href="contact.html" class="btn btn-secondary btn-large">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Colin's Building Services</h3>
+                    <p>Professional construction services with over 15 years of experience.</p>
+                    <div class="social-links">
+                        <!-- Social links will be populated dynamically -->
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html#extensions">Home Extensions</a></li>
+                        <li><a href="services.html#kitchens">Kitchen Fitting</a></li>
+                        <li><a href="services.html#bathrooms">Bathroom Renovations</a></li>
+                        <li><a href="services.html#general">General Building</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="gallery.html">Project Gallery</a></li>
+                        <li><a href="accreditation.html">Certifications</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="booking.html">Book Consultation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>📞 <a href="tel:+447700900123" data-phone>+44 7700 900123</a></p>
+                    <p>✉️ <a href="mailto:colin@colinbuilds.co.uk" data-email>colin@colinbuilds.co.uk</a></p>
+                    <p>📍 <span data-address>45 High Street<br>Orpington, BR6 0JH</span></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-copyright>&copy; 2024 Colin's Professional Building Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/xml-parser.js"></script>
+    <script src="js/feature-manager.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/theme-switcher.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/chatbot.js"></script>
+    
+    <script>
+        // Demo-specific JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait for feature manager to initialize
+            setTimeout(() => {
+                setupDemoControls();
+                updateToggleStates();
+            }, 2000);
+        });
+        
+        function setupDemoControls() {
+            const toggles = document.querySelectorAll('.toggle-switch');
+            
+            toggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const featurePath = this.dataset.feature;
+                    const isActive = this.classList.contains('active');
+                    const indicator = this.querySelector('.status-indicator');
+                    
+                    // Toggle the visual state
+                    if (isActive) {
+                        this.classList.remove('active');
+                        indicator.classList.remove('enabled');
+                        indicator.classList.add('disabled');
+                    } else {
+                        this.classList.add('active');
+                        indicator.classList.remove('disabled');
+                        indicator.classList.add('enabled');
+                    }
+                    
+                    // Update the feature manager (simulated)
+                    updateFeatureState(featurePath, !isActive);
+                });
+            });
+        }
+        
+        function updateFeatureState(featurePath, enabled) {
+            // In a real implementation, this would update the XML or send to server
+            console.log(`Feature ${featurePath}: ${enabled ? 'enabled' : 'disabled'}`);
+            
+            // Simulate feature toggle by hiding/showing elements
+            const elementMap = {
+                'hero-section': '.hero-section',
+                'services-section': '.services-section',
+                'testimonials-section': '.testimonials-section',
+                'accreditations-section': '.accreditations-section',
+                'chatbot': '#chatbot-container',
+                'calendar-booking': '#calendar-container',
+                'theme-switcher': '#theme-switcher',
+                'navigation.mobile-menu': '.mobile-menu-toggle',
+                'footer.social-links': '.social-links',
+                'footer.contact-info': '.footer-section:last-child'
+            };
+            
+            const selector = elementMap[featurePath];
+            if (selector) {
+                const elements = document.querySelectorAll(selector);
+                elements.forEach(element => {
+                    element.style.display = enabled ? '' : 'none';
+                });
+            }
+            
+            // Show notification
+            showNotification(`${featurePath} ${enabled ? 'enabled' : 'disabled'}`);
+        }
+        
+        function updateToggleStates() {
+            // Update toggle states based on current feature manager state
+            if (!window.featureManager) return;
+            
+            const toggles = document.querySelectorAll('.toggle-switch');
+            toggles.forEach(toggle => {
+                const featurePath = toggle.dataset.feature;
+                const isEnabled = window.featureManager.isEnabled(featurePath);
+                const indicator = toggle.querySelector('.status-indicator');
+                
+                if (isEnabled) {
+                    toggle.classList.add('active');
+                    indicator.classList.add('enabled');
+                    indicator.classList.remove('disabled');
+                } else {
+                    toggle.classList.remove('active');
+                    indicator.classList.add('disabled');
+                    indicator.classList.remove('enabled');
+                }
+            });
+        }
+        
+        function resetAllToggles() {
+            const toggles = document.querySelectorAll('.toggle-switch');
+            toggles.forEach(toggle => {
+                toggle.classList.add('active');
+                const indicator = toggle.querySelector('.status-indicator');
+                indicator.classList.add('enabled');
+                indicator.classList.remove('disabled');
+                
+                const featurePath = toggle.dataset.feature;
+                updateFeatureState(featurePath, true);
+            });
+            showNotification('All features enabled');
+        }
+        
+        function disableAll() {
+            const toggles = document.querySelectorAll('.toggle-switch');
+            toggles.forEach(toggle => {
+                toggle.classList.remove('active');
+                const indicator = toggle.querySelector('.status-indicator');
+                indicator.classList.add('disabled');
+                indicator.classList.remove('enabled');
+                
+                const featurePath = toggle.dataset.feature;
+                updateFeatureState(featurePath, false);
+            });
+            showNotification('All features disabled');
+        }
+        
+        function enableAll() {
+            resetAllToggles();
+        }
+        
+        function showNotification(message) {
+            // Create temporary notification
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 350px;
+                background: #4A90D9;
+                color: white;
+                padding: 10px 15px;
+                border-radius: 4px;
+                font-size: 12px;
+                z-index: 10001;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

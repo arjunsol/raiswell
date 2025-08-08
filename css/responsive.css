@@ -1,0 +1,549 @@
+/**
+ * Responsive Styles for Colin's Professional Building Services
+ * Mobile-first responsive design with progressive enhancement
+ */
+
+/* Base Mobile Styles (320px and up) */
+@media (min-width: 320px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .hero {
+        min-height: 80vh;
+    }
+    
+    .hero-content {
+        padding: 0 1rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+        line-height: 1.1;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-description {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+    
+    .btn-group {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 0.875rem 1.5rem;
+    }
+}
+
+/* Small Mobile (375px and up) */
+@media (min-width: 375px) {
+    .hero-title {
+        font-size: 2.25rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .card {
+        padding: 1.5rem;
+    }
+    
+    .service-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Large Mobile (414px and up) */
+@media (min-width: 414px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .btn-group {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .btn {
+        width: auto;
+        min-width: 140px;
+    }
+}
+
+/* Tablet Portrait (768px and up) */
+@media (min-width: 768px) {
+    :root {
+        --font-base-size: 16px;
+        --section-padding: 3rem 0;
+    }
+    
+    .container {
+        padding: 0 2rem;
+    }
+    
+    .hero {
+        min-height: 90vh;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 2.25rem;
+    }
+    
+    .mobile-menu-toggle {
+        display: none;
+    }
+    
+    .nav-menu {
+        display: flex !important;
+        position: static;
+        background: none;
+        box-shadow: none;
+        flex-direction: row;
+        padding: 0;
+        gap: 2rem;
+    }
+    
+    .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .contact-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .accreditations-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .testimonial-card {
+        padding: 3rem 2rem;
+    }
+    
+    .card {
+        padding: 2rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablet Landscape (1024px and up) */
+@media (min-width: 1024px) {
+    :root {
+        --section-padding: 4rem 0;
+    }
+    
+    .container {
+        padding: 0 2rem;
+    }
+    
+    .hero {
+        min-height: 100vh;
+    }
+    
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .contact-info {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Desktop (1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: var(--container-max-width);
+        padding: 0 1rem;
+    }
+    
+    .hero-title {
+        font-size: 4rem;
+    }
+    
+    .grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Large Desktop (1440px and up) */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .hero-title {
+        font-size: 4.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.6rem;
+    }
+    
+    .section-title {
+        font-size: 3rem;
+    }
+}
+
+/* Ultra Wide (1920px and up) */
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1600px;
+    }
+    
+    .hero-title {
+        font-size: 5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.8rem;
+    }
+}
+
+/* Navigation Responsive Behavior */
+@media (max-width: 767px) {
+    .nav {
+        padding: 0.75rem 0;
+    }
+    
+    .nav-container {
+        position: relative;
+    }
+    
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--color-background);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+        transform: translateY(-10px);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-link {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid var(--color-light-gray);
+    }
+    
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+        padding: 0.5rem;
+        border-radius: var(--border-radius);
+        transition: var(--transition);
+    }
+    
+    .mobile-menu-toggle:hover {
+        background-color: var(--color-light-gray);
+    }
+    
+    .mobile-menu-toggle.active {
+        color: var(--color-secondary);
+    }
+}
+
+/* Hero Section Responsive Images */
+@media (max-width: 767px) {
+    .hero-background {
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+/* Card Layouts for Different Screen Sizes */
+@media (max-width: 767px) {
+    .card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .service-card {
+        text-align: center;
+    }
+    
+    .service-image {
+        height: 180px;
+    }
+    
+    .card-icon {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .service-image {
+        height: 200px;
+    }
+    
+    .card-title {
+        font-size: 1.3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .service-image {
+        height: 220px;
+    }
+    
+    .card:hover {
+        transform: translateY(-8px);
+    }
+}
+
+/* Testimonials Responsive */
+@media (max-width: 767px) {
+    .testimonial-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .testimonial-text {
+        font-size: 1rem;
+    }
+}
+
+/* Contact Section Responsive */
+@media (max-width: 767px) {
+    .contact-item {
+        padding: 1.5rem 1rem;
+    }
+    
+    .contact-icon {
+        font-size: 2rem;
+    }
+}
+
+/* Form Responsive Styles */
+@media (max-width: 767px) {
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .form-control {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .hero-background {
+        background-attachment: scroll;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    :root {
+        --color-primary: #000000;
+        --color-secondary: #0066cc;
+        --color-accent: #0066cc;
+        --color-text: #000000;
+        --box-shadow: 0 0 0 2px #000000;
+    }
+    
+    .card,
+    .btn {
+        border: 2px solid var(--color-primary);
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-background: #1a1a1a;
+        --color-text: #e0e0e0;
+        --color-light-gray: #333333;
+    }
+    
+    .header {
+        background-color: rgba(26, 26, 26, 0.95);
+    }
+    
+    .card {
+        background-color: #2a2a2a;
+        border-color: #444444;
+    }
+    
+    .footer {
+        background-color: #111111;
+    }
+}
+
+/* Print Styles */
+@media print {
+    * {
+        background: transparent !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    
+    .header,
+    .mobile-menu-toggle,
+    .btn,
+    .footer {
+        display: none;
+    }
+    
+    .hero {
+        min-height: auto;
+        padding: 2rem 0;
+    }
+    
+    .section {
+        page-break-inside: avoid;
+        padding: 1rem 0;
+    }
+    
+    .card {
+        border: 1px solid #000;
+        page-break-inside: avoid;
+    }
+    
+    a {
+        text-decoration: underline;
+    }
+    
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+    }
+}
+
+/* Landscape Orientation for Mobile */
+@media (max-width: 767px) and (orientation: landscape) {
+    .hero {
+        min-height: 60vh;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .card:hover {
+        transform: none;
+    }
+    
+    .service-card:hover .service-image::after {
+        opacity: 0;
+    }
+    
+    .nav-link::after {
+        display: none;
+    }
+    
+    .btn {
+        min-height: 44px; /* iOS touch target size */
+    }
+    
+    .mobile-menu-toggle {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* Hover Capable Devices */
+@media (hover: hover) and (pointer: fine) {
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .btn:not(:disabled):hover {
+        transform: translateY(-2px);
+    }
+    
+    .service-card:hover .service-image {
+        transform: scale(1.05);
+    }
+}
