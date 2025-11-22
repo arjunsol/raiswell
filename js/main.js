@@ -857,7 +857,7 @@ window.addEventListener('resize', () => {
     // Close mobile menu on resize to larger screen
     const navMenu = document.querySelector('.nav-menu');
     const mobileToggle = document.querySelector('.mobile-menu-toggle');
-    
+
     if (window.innerWidth > 768 && navMenu?.classList.contains('active')) {
         navMenu.classList.remove('active');
         mobileToggle?.classList.remove('active');
@@ -865,3 +865,39 @@ window.addEventListener('resize', () => {
         if (mobileToggle) mobileToggle.innerHTML = '☰';
     }
 });
+
+// Sticky CTA Behavior
+function initStickyCTA() {
+    const stickyCTA = document.getElementById('stickyCTA');
+    if (!stickyCTA) return;
+
+    let scrollTimeout;
+    let hasShown = false;
+
+    function showCTA() {
+        // Show after user scrolls 30% of page or after 10 seconds
+        const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+
+        if (!hasShown && (scrollPercent > 30 || document.visibilityState === 'visible')) {
+            stickyCTA.classList.add('visible');
+            hasShown = true;
+        }
+    }
+
+    // Show on scroll
+    window.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(showCTA, 100);
+    });
+
+    // Show after 10 seconds if user hasn't scrolled
+    setTimeout(() => {
+        if (!hasShown) {
+            stickyCTA.classList.add('visible');
+            hasShown = true;
+        }
+    }, 10000);
+}
+
+// Initialize sticky CTA on page load
+document.addEventListener('DOMContentLoaded', initStickyCTA);
