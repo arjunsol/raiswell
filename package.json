@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Colin's Professional Building Services Website - Static site with XML-driven configuration",
   "scripts": {
-    "build": "python build-config.py",
-    "build:azure": "python build-config.py",
-    "start": "python server.py",
-    "dev": "python build-config.py --dev",
-    "watch": "python build-config.py --watch"
+    "build": "python3 build-config.py || python build-config.py",
+    "build:azure": "python3 build-config.py || python build-config.py",
+    "start": "python3 server.py || python server.py",
+    "dev": "python3 build-config.py --dev || python build-config.py --dev",
+    "watch": "python3 build-config.py --watch || python build-config.py --watch"
   },
   "repository": {
     "type": "git",
