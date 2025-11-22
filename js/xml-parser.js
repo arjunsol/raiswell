@@ -1124,6 +1124,7 @@ class XMLConfigParser {
 
 // Create global instance
 window.siteConfig = new XMLConfigParser();
+window.xmlParser = window.siteConfig; // Alias for feature manager compatibility
 
 // Export for module usage
 if (typeof module !== 'undefined' && module.exports) {
