@@ -22,6 +22,15 @@ jobs:
         with:
           submodules: true
           lfs: false
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Build XML Configuration
+        run: python build-config.py
+
       - name: Install OIDC Client from Core Package
         run: npm install @actions/core@1.6.0 @actions/http-client
       - name: Get Id Token
