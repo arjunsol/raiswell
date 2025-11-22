@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Professional building services in Manchester. Extensions, kitchens, bathrooms & general building work. Gas Safe registered, NICEIC approved. Free quotes.">
     <meta name="keywords" content="builder manchester, home extensions, kitchen fitting, bathroom renovation, building services, gas safe, niceic">
-    <meta name="author" content="Colin's Professional Building Services">
+    <meta name="author" content="Raiswell Building Services">
     
     <!-- Open Graph tags -->
-    <meta property="og:title" content="Colin's Professional Building Services | Manchester Builder">
+    <meta property="og:title" content="Raiswell Building Services | Manchester Builder">
     <meta property="og:description" content="Professional building services in Manchester. Extensions, kitchens, bathrooms & general building work. Gas Safe registered, NICEIC approved. Free quotes.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="">
@@ -25,11 +25,13 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/mobile-navigation.css">
+    <link rel="stylesheet" href="css/cta-optimization.css">
     <link rel="stylesheet" href="css/themes.css">
     <link rel="stylesheet" href="css/chatbot.css">
     <link rel="stylesheet" href="css/modals.css">
     
-    <title>Colin's Professional Building Services | Manchester Builder</title>
+    <title>Raiswell Building Services | Manchester Builder</title>
 </head>
 <body>
     <!-- Header -->
@@ -38,8 +40,8 @@
             <div class="container">
                 <div class="nav-container">
                     <div class="logo">
-                        <img src="images/hero/company-logo.png" alt="Colin's Professional Building Services" style="display: none;">
-                        Colin's Building Services
+                        <img src="images/hero/company-logo.png" alt="Raiswell Building Services Logo" class="logo-image">
+                        <span class="logo-text">Raiswell Building Services</span>
                     </div>
                     
                     <ul class="nav-menu">
@@ -59,12 +61,15 @@
         </nav>
     </header>
 
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" aria-hidden="true"></div>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-background"></div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Colin's Professional Building Services</h1>
+                <h1 class="hero-title">Raiswell Building Services</h1>
                 <p class="hero-subtitle">Quality Construction You Can Trust</p>
                 <p class="hero-description">Professional building services with over 15 years of experience. Specializing in home extensions, kitchen fitting, bathroom renovations, and general construction work across the UK.</p>
                 
@@ -283,7 +288,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Colin's Building Services</h3>
+                    <h3>Raiswell Building Services</h3>
                     <p>Professional construction services with over 15 years of experience. Quality workmanship, competitive prices, and exceptional customer service.</p>
                     <div class="social-links">
                         <!-- Social links will be populated dynamically -->
@@ -319,7 +324,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p data-copyright>&copy; 2024 Colin's Professional Building Services. All rights reserved.</p>
+                <p data-copyright>&copy; 2024 Raiswell Building Services. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -392,8 +397,12 @@
     <script src="js/xml-parser.js"></script>
     <script src="js/feature-manager.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/theme-switcher.js"></script>
     <script src="js/forms.js"></script>
     <script src="js/chatbot.js"></script>
+
+    <!-- Sticky CTA -->
+    <div class="sticky-cta" id="stickyCTA">
+        <a href="booking.html" class="btn btn-primary">Book Free Consultation</a>
+    </div>
 </body>
 </html>

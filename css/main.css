@@ -205,15 +205,22 @@ a:hover {
 }
 
 .logo {
-    font-family: var(--font-heading);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--color-primary);
+    color: var(--color-text);
 }
 
-.logo img {
-    height: 40px;
+.logo-image {
+    height: 50px;
     width: auto;
+    display: block;
+}
+
+.logo-text {
+    display: inline-block;
 }
 
 .nav-menu {
