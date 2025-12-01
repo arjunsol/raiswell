@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Raiswell Building Services - Professional building company with over 15 years experience in London and the South East. Family-run business committed to quality.">
+    <meta name="keywords" content="about us, building company, professional builders, family business, construction services, kent, london">
+    <meta name="author" content="Raiswell Building Services">
+
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="About Us | Raiswell Building Services">
+    <meta property="og:description" content="Family-run professional building company with over 15 years experience. Specializing in extensions, kitchens, bathrooms and general building work.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="images/hero/company-logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components/top-bar.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/page-header.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <title>About Us | Raiswell Building Services</title>
+
+    <style>
+        /* About Section Styles */
+        .about-section {
+            padding: 4rem 0;
+        }
+
+        .about-content {
+            padding-right: 2rem;
+        }
+
+        .about-content h2 {
+            font-family: var(--font-heading, 'Montserrat', sans-serif);
+            font-size: 2rem;
+            color: var(--color-primary, #212121);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--color-text, #000000);
+            margin-bottom: 1.2rem;
+        }
+
+        .about-cta {
+            margin-top: 2rem;
+        }
+
+        /* Image Slider Styles */
+        .about-slider {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .about-slider__slides {
+            position: relative;
+            width: 100%;
+            padding-top: 75%; /* 4:3 aspect ratio */
+        }
+
+        .about-slider__slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .about-slider__slide.active {
+            opacity: 1;
+        }
+
+        .about-slider__dots {
+            text-align: center;
+            padding: 15px 0;
+            background-color: var(--color-white, #ffffff);
+        }
+
+        .about-slider__dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--color-light-gray, #ECF0F1);
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .about-slider__dot.active {
+            background-color: var(--color-secondary, #0fb6ee);
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .about-content {
+                padding-right: 0;
+                margin-bottom: 2rem;
+            }
+
+            .about-content h2 {
+                font-size: 1.75rem;
+            }
+
+            .about-section {
+                padding: 3rem 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .about-content p {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar__content">
+                <div class="top-bar__left">
+                    <a href="tel:+447700900123" class="top-bar__link" data-phone>
+                        <span class="icon">📞</span>
+                        <span class="text">+44 7700 900123</span>
+                    </a>
+                    <a href="mailto:colin@raiswell.com" class="top-bar__link" data-email>
+                        <span class="icon">✉️</span>
+                        <span class="text">colin@raiswell.com</span>
+                    </a>
+                </div>
+                <div class="top-bar__right">
+                    <a href="https://instagram.com/Raiswellbuilds" target="_blank" rel="noopener noreferrer" class="top-bar__social" aria-label="Instagram">
+                        <span class="icon">📷</span>
+                    </a>
+                    <a href="https://facebook.com/RaiswellBuildsUK" target="_blank" rel="noopener noreferrer" class="top-bar__social" aria-label="Facebook">
+                        <span class="icon">👍</span>
+                    </a>
+                    <a href="https://linkedin.com/company/Raiswell-building-services" target="_blank" rel="noopener noreferrer" class="top-bar__social" aria-label="LinkedIn">
+                        <span class="icon">💼</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-container">
+                    <div class="logo">
+                        <img src="images/hero/company-logo.png" alt="Raiswell Building Services" style="display: none;">
+                        <span data-company-name>Raiswell Building Services</span>
+                    </div>
+
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="about.html" class="nav-link active">About</a></li>
+                        <li><a href="services.html" class="nav-link">Services</a></li>
+                        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                        <li><a href="accreditation.html" class="nav-link">Accreditations</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                        <li><a href="booking.html" class="nav-link">Book Consultation</a></li>
+                    </ul>
+
+                    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                        ☰
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="page-header__inner container">
+            <h1 class="page-header__title">About Us</h1>
+            <nav class="breadcrumbs">
+                <a href="index.html">Home</a>
+                <span class="separator">»</span>
+                <span class="current">About Us</span>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="section about-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8 col-md-6 col-sm-12">
+                        <div class="about-content">
+                            <h2 data-about-title>Who We Are</h2>
+                            <div data-about-content>
+                                <p>Raiswell Building Services is a professional building company that provides a high level of service to all of its customers and looks to exceed expectations in all aspects of building.</p>
+                                <p>As a family-run business, we strive to offer extra care and consideration for all of our customers when carrying out projects which are shown by our vast amount of recommendations and highly thought of reputation.</p>
+                                <p>With over fifteen years of experience in the construction industry, we guarantee that no project is too big or small for our experienced tradesmen to complete.</p>
+                                <p>We work in compliance with all of the latest building regulations ensuring our work is guaranteed, safe and of high quality.</p>
+                                <p>For any enquiries, questions or if you are requiring further information, please do not hesitate to contact us.</p>
+                            </div>
+                            <div class="about-cta mt-4">
+                                <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-6 col-sm-12">
+                        <div class="about-slider" data-about-slider>
+                            <div class="about-slider__slides">
+                                <img src="images/about/team-1.jpg" alt="Our team at work" class="about-slider__slide active">
+                                <img src="images/about/project-1.jpg" alt="Recent project" class="about-slider__slide">
+                                <img src="images/about/project-2.jpg" alt="Quality work" class="about-slider__slide">
+                            </div>
+                            <div class="about-slider__dots"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-company-name>Raiswell Building Services</h3>
+                    <p>Professional construction services with over 15 years of experience. Quality workmanship, competitive prices, and exceptional customer service.</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/Raiswellbuilds" target="_blank" rel="noopener noreferrer" aria-label="Instagram">📷</a>
+                        <a href="https://facebook.com/RaiswellBuildsUK" target="_blank" rel="noopener noreferrer" aria-label="Facebook">👍</a>
+                        <a href="https://linkedin.com/company/Raiswell-building-services" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">💼</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html#extensions">Home Extensions</a></li>
+                        <li><a href="services.html#kitchens">Kitchen Fitting</a></li>
+                        <li><a href="services.html#bathrooms">Bathroom Renovations</a></li>
+                        <li><a href="services.html#general">General Building</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="gallery.html">Project Gallery</a></li>
+                        <li><a href="accreditation.html">Certifications</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="booking.html">Book Consultation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>📞 <a href="tel:+447700900123" data-phone>+44 7700 900123</a></p>
+                    <p>✉️ <a href="mailto:colin@raiswell.com" data-email>colin@raiswell.com</a></p>
+                    <p>📍 <span data-address>45 High Street<br>Orpington, BR6 0JH<br>Kent</span></p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-copyright>&copy; 2024 Raiswell Building Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu">
+            <button class="mobile-menu-close" aria-label="Close mobile menu">✕</button>
+            <ul class="mobile-menu-items">
+                <li><a href="index.html" class="mobile-menu-link">Home</a></li>
+                <li><a href="about.html" class="mobile-menu-link active">About</a></li>
+                <li><a href="services.html" class="mobile-menu-link">Services</a></li>
+                <li><a href="gallery.html" class="mobile-menu-link">Gallery</a></li>
+                <li><a href="accreditation.html" class="mobile-menu-link">Accreditations</a></li>
+                <li><a href="contact.html" class="mobile-menu-link">Contact</a></li>
+                <li><a href="booking.html" class="mobile-menu-link">Book Consultation</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/compiled-config.js"></script>
+    <script src="js/xml-parser.js"></script>
+    <script src="js/feature-manager.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- About Page Specific Script -->
+    <script>
+        // About page slider functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('[data-about-slider]');
+            if (!slider) return;
+
+            const slides = slider.querySelectorAll('.about-slider__slide');
+            const dotsContainer = slider.querySelector('.about-slider__dots');
+            let currentSlide = 0;
+            let slideInterval;
+
+            // Create dots
+            slides.forEach((_, index) => {
+                const dot = document.createElement('span');
+                dot.className = 'about-slider__dot' + (index === 0 ? ' active' : '');
+                dot.addEventListener('click', () => goToSlide(index));
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = dotsContainer.querySelectorAll('.about-slider__dot');
+
+            function goToSlide(index) {
+                slides[currentSlide].classList.remove('active');
+                dots[currentSlide].classList.remove('active');
+
+                currentSlide = index;
+
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
+            }
+
+            function nextSlide() {
+                goToSlide((currentSlide + 1) % slides.length);
+            }
+
+            // Auto-advance slides
+            function startSlider() {
+                slideInterval = setInterval(nextSlide, 5000);
+            }
+
+            function stopSlider() {
+                clearInterval(slideInterval);
+            }
+
+            // Start auto-advance
+            startSlider();
+
+            // Pause on hover
+            slider.addEventListener('mouseenter', stopSlider);
+            slider.addEventListener('mouseleave', startSlider);
+
+            // Load content from XML if available
+            if (window.XMLParser && window.XMLParser.config) {
+                const aboutPage = window.XMLParser.getPageConfig('about');
+                if (aboutPage) {
+                    const titleEl = document.querySelector('[data-about-title]');
+                    const contentEl = document.querySelector('[data-about-content]');
+
+                    if (aboutPage.content && aboutPage.content.title && titleEl) {
+                        titleEl.textContent = aboutPage.content.title;
+                    }
+
+                    if (aboutPage.content && aboutPage.content.paragraphs && contentEl) {
+                        const paragraphs = aboutPage.content.paragraphs;
+                        if (Array.isArray(paragraphs.p)) {
+                            contentEl.innerHTML = paragraphs.p.map(p => `<p>${p}</p>`).join('');
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

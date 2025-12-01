@@ -1,0 +1,433 @@
+/**
+ * Header Component
+ * KJS Lofts inspired design - Clean, professional header with sticky behavior
+ * Mobile-first responsive approach
+ */
+
+/* ============================================
+   BASE STYLES (Mobile First)
+   ============================================ */
+
+.header {
+    background-color: var(--color-white, #ffffff);
+    width: 100%;
+    position: fixed;
+    top: 38px; /* Below the top bar */
+    left: 0;
+    right: 0;
+    z-index: 999; /* Below top bar z-index */
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Sticky header state with subtle shadow */
+.header.is-sticky {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Header inner container */
+.header__inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ============================================
+   LOGO STYLES
+   ============================================ */
+
+.header__logo {
+    flex-shrink: 0;
+    line-height: 0;
+    transition: opacity 0.3s ease;
+}
+
+.header__logo:hover {
+    opacity: 0.85;
+}
+
+.header__logo-text {
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary, #212121);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.header__logo img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 200px;
+    max-height: 60px;
+}
+
+/* ============================================
+   MOBILE MENU TOGGLE
+   ============================================ */
+
+.mobile-menu-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    color: var(--color-secondary, #0fb6ee);
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.mobile-menu-toggle:hover {
+    opacity: 0.8;
+}
+
+.mobile-menu-toggle:active {
+    transform: scale(0.95);
+}
+
+/* Hamburger icon */
+.mobile-menu-toggle__icon {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 24px;
+    height: 18px;
+}
+
+.mobile-menu-toggle__icon span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-secondary, #0fb6ee);
+    transition: all 0.3s ease;
+}
+
+/* Hamburger animation when menu is open */
+.mobile-menu-toggle.is-active .mobile-menu-toggle__icon span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.mobile-menu-toggle.is-active .mobile-menu-toggle__icon span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.is-active .mobile-menu-toggle__icon span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ============================================
+   NAVIGATION MENU (Hidden on Mobile)
+   ============================================ */
+
+.nav-menu {
+    display: none;
+}
+
+.nav-menu__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-menu__list li {
+    margin: 0;
+}
+
+.nav-item {
+    margin: 0;
+}
+
+.nav-link {
+    display: block;
+    color: var(--color-text, #000000);
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--color-secondary, #0fb6ee);
+    text-decoration: none;
+}
+
+/* Active state */
+.nav-link.active {
+    color: var(--color-secondary, #0fb6ee);
+}
+
+/* Underline effect on hover and active */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0.5rem;
+    left: 1rem;
+    right: 1rem;
+    height: 2px;
+    background-color: var(--color-secondary, #0fb6ee);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    transform: scaleX(1);
+}
+
+/* ============================================
+   TABLET STYLES (>768px)
+   ============================================ */
+
+@media (min-width: 768px) {
+    .header__inner {
+        padding: 1.25rem 2rem;
+    }
+
+    .header__logo img {
+        max-width: 250px;
+        max-height: 70px;
+    }
+
+    .mobile-menu-toggle {
+        font-size: 1rem;
+    }
+}
+
+/* ============================================
+   DESKTOP STYLES (>960px)
+   ============================================ */
+
+@media (min-width: 960px) {
+    .header__inner {
+        padding: 1.5rem 3rem;
+    }
+
+    /* Show desktop navigation */
+    .nav-menu {
+        display: block;
+    }
+
+    /* Hide mobile menu toggle */
+    .mobile-menu-toggle {
+        display: none;
+    }
+
+    .header__logo img {
+        max-width: 350px;
+        max-height: 80px;
+    }
+
+    .nav-link {
+        font-size: 0.875rem;
+        padding: 0.75rem 1.25rem;
+    }
+
+    .nav-link::after {
+        bottom: 0.5rem;
+        left: 1.25rem;
+        right: 1.25rem;
+    }
+}
+
+/* ============================================
+   LARGE DESKTOP STYLES (>1200px)
+   ============================================ */
+
+@media (min-width: 1200px) {
+    .nav-menu__list {
+        gap: 1rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 0.75rem 1.5rem;
+    }
+
+    .nav-link::after {
+        left: 1.5rem;
+        right: 1.5rem;
+    }
+}
+
+/* ============================================
+   MOBILE MENU DROPDOWN (Optional Enhancement)
+   ============================================ */
+
+/* If you want a mobile dropdown menu, add these styles */
+.nav-menu--mobile {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-white, #ffffff);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    padding: 1rem 0;
+    gap: 0;
+}
+
+.nav-menu--mobile.is-open {
+    display: flex;
+}
+
+.nav-menu--mobile .nav-link {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.nav-menu--mobile .nav-link::after {
+    display: none;
+}
+
+.nav-menu--mobile .nav-item:last-child .nav-link {
+    border-bottom: none;
+}
+
+/* ============================================
+   ACCESSIBILITY ENHANCEMENTS
+   ============================================ */
+
+/* Focus states for keyboard navigation */
+.nav-link:focus,
+.mobile-menu-toggle:focus {
+    outline: 2px solid var(--color-secondary, #0fb6ee);
+    outline-offset: 2px;
+}
+
+/* Skip to content link (for screen readers) */
+.skip-to-content {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background-color: var(--color-secondary, #0fb6ee);
+    color: var(--color-white, #ffffff);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    z-index: 10000;
+    font-weight: 600;
+}
+
+.skip-to-content:focus {
+    top: 0;
+}
+
+/* ============================================
+   MOBILE MENU (Slide-out)
+   ============================================ */
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    z-index: 1100;
+    transition: right 0.3s ease;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.mobile-menu.is-open {
+    right: 0;
+}
+
+.mobile-menu__header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.mobile-menu__close {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    line-height: 1;
+}
+
+.mobile-menu__items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu__items li {
+    border-bottom: 1px solid #eee;
+}
+
+.mobile-menu__items .nav-link {
+    display: block;
+    padding: 1rem 0;
+    font-size: 1.1rem;
+}
+
+.mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1050;
+}
+
+.mobile-menu-overlay.is-visible {
+    display: block;
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+    .header {
+        position: static;
+        box-shadow: none;
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+}
+
+/* ============================================
+   REDUCED MOTION PREFERENCE
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .header,
+    .header__logo,
+    .nav-link,
+    .nav-link::after,
+    .mobile-menu-toggle,
+    .mobile-menu-toggle__icon span {
+        transition: none;
+    }
+}

@@ -1,0 +1,20 @@
+{# Head component - includes meta tags, fonts, and stylesheets #}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="{{ description | default('Professional building services from Raiswell Building Services.') }}">
+<title>{{ title }} | {{ site.name }}</title>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="{{ site.fonts.google }}" rel="stylesheet">
+
+<!-- Stylesheets -->
+{% for stylesheet in site.stylesheets %}
+<link rel="stylesheet" href="/{{ stylesheet }}">
+{% endfor %}
+{% if extraStyles %}
+{% for style in extraStyles %}
+<link rel="stylesheet" href="/{{ style }}">
+{% endfor %}
+{% endif %}

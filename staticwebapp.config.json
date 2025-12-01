@@ -1,22 +1,16 @@
 {
-  "routes": [
-    {
-      "route": "/*",
-      "serve": "/index.html",
-      "statusCode": 200
-    }
-  ],
   "navigationFallback": {
-    "rewrite": "/index.html",
+    "rewrite": "/404.html",
     "exclude": [
-      "/images/*.{png,jpg,gif,svg}",
-      "/css/*.css",
-      "/js/*.js",
-      "/config/*.xml"
+      "/images/*",
+      "/css/*",
+      "/js/*",
+      "/config/*",
+      "*.{css,js,json,xml,svg,png,jpg,gif,ico,woff,woff2}"
     ]
   },
   "globalHeaders": {
-    "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:;",
+    "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com https://maps.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; frame-src https://www.google.com https://maps.google.com;",
     "x-content-type-options": "nosniff",
     "x-frame-options": "SAMEORIGIN"
   },
@@ -24,8 +18,5 @@
     ".json": "application/json",
     ".xml": "application/xml",
     ".svg": "image/svg+xml"
-  },
-  "platform": {
-    "apiRuntime": "python:3.9"
   }
 }

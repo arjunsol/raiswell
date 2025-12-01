@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "Colin's Professional Building Services Website - Static site with XML-driven configuration",
   "scripts": {
-    "build": "python build-config.py",
-    "build:azure": "python build-config.py",
-    "start": "python server.py",
-    "dev": "python build-config.py --dev",
-    "watch": "python build-config.py --watch"
+    "build:config": "python build-config.py",
+    "build:11ty": "npx @11ty/eleventy",
+    "build": "npm run build:config && npm run build:11ty",
+    "build:azure": "npm run build",
+    "start": "npx @11ty/eleventy --serve",
+    "dev": "npm run build:config && npx @11ty/eleventy --serve",
+    "watch": "npx @11ty/eleventy --watch",
+    "serve:legacy": "python server.py"
   },
   "repository": {
     "type": "git",
@@ -22,5 +25,8 @@
   "license": "MIT",
   "engines": {
     "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
   }
 }

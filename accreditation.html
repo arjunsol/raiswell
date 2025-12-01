@@ -3,86 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Our professional certifications and accreditations - Gas Safe registered, NICEIC approved, FMB member, and Checkatrade approved builder in London.">
-    <meta name="keywords" content="gas safe registered, niceic approved, fmb member, checkatrade approved, certified builder london, professional accreditations">
-    <meta name="author" content="Colin's Professional Building Services">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    
+    <meta name="description" content="Our professional certifications and accreditations - Gas Safe registered, NICEIC approved, FMB member, and Checkatrade approved builder.">
+    <title>Certifications & Accreditations | Raiswell Building Services</title>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Roboto+Slab:wght@400;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components/top-bar.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/page-header.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/themes.css">
-    
-    <title>Certifications & Accreditations | Colin's Professional Building Services</title>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <div class="container">
-                <div class="nav-container">
-                    <div class="logo">
-                        <img src="images/hero/company-logo.png" alt="Colin's Professional Building Services" style="display: none;">
-                        Colin's Building Services
-                    </div>
-                    
-                    <ul class="nav-menu">
-                        <li><a href="index.html" class="nav-link">Home</a></li>
-                        <li><a href="services.html" class="nav-link">Services</a></li>
-                        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-                        <li><a href="accreditation.html" class="nav-link active">Accreditations</a></li>
-                        <li><a href="contact.html" class="nav-link">Contact</a></li>
-                        <li><a href="booking.html" class="nav-link">Book Consultation</a></li>
-                    </ul>
-                    
-                    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-                        ☰
-                    </button>
-                </div>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar__container">
+            <div class="top-bar__content">
+                <a href="tel:+447700900123" class="top-bar__item top-bar__item--phone">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <span data-phone>+44 7700 900123</span>
+                </a>
+                <a href="mailto:colin@raiswell.com" class="top-bar__item top-bar__item--email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <span data-email>colin@raiswell.com</span>
+                </a>
             </div>
-        </nav>
+            <div class="top-bar__social" data-social-links></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header__inner container">
+            <a href="/" class="header__logo">
+                <img src="images/logo.png" alt="Raiswell Building Services" data-logo>
+            </a>
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-menu__list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="gallery.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                <span class="hamburger-icon"></span>
+                <span class="menu-text">Menu</span>
+            </button>
+        </div>
     </header>
 
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay"></div>
+    <nav class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu__header">
+            <button class="mobile-menu__close" aria-label="Close menu">&times;</button>
+        </div>
+        <ul class="mobile-menu__items">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="services.html" class="nav-link">Services</a></li>
+            <li><a href="gallery.html" class="nav-link">Portfolio</a></li>
+            <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
     <!-- Page Header -->
-    <section class="section" style="padding-top: 8rem; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); color: white;">
-        <div class="container">
-            <div class="text-center">
-                <h1 class="hero-title" style="color: white;">Certifications & Accreditations</h1>
-                <p class="hero-subtitle" style="opacity: 0.9;">Fully licensed, insured, and accredited for your peace of mind</p>
-            </div>
+    <section class="page-header">
+        <div class="page-header__container container">
+            <h1 class="page-header__title">Certifications & Accreditations</h1>
+            <nav class="page-header__breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="separator">&raquo;</span>
+                <span class="current">Accreditations</span>
+            </nav>
         </div>
     </section>
 
     <!-- Trust Badges Overview -->
     <section class="section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header text-center">
                 <h2 class="section-title">Why Our Accreditations Matter</h2>
                 <p class="section-subtitle">We maintain the highest industry standards through continuous certification and training</p>
             </div>
-            
+
             <div class="grid grid-3">
                 <div class="card text-center">
-                    <div class="card-icon" style="color: var(--color-secondary);">🛡️</div>
+                    <div class="card-icon">&#128737;</div>
                     <h3 class="card-title">Professional Standards</h3>
                     <p>All our certifications ensure we meet or exceed industry safety and quality standards for your protection.</p>
                 </div>
-                
+
                 <div class="card text-center">
-                    <div class="card-icon" style="color: var(--color-secondary);">✅</div>
+                    <div class="card-icon">&#9989;</div>
                     <h3 class="card-title">Regular Inspections</h3>
                     <p>Our work is regularly inspected and approved by industry bodies to maintain our accredited status.</p>
                 </div>
-                
+
                 <div class="card text-center">
-                    <div class="card-icon" style="color: var(--color-secondary);">📋</div>
+                    <div class="card-icon">&#128203;</div>
                     <h3 class="card-title">Continuous Training</h3>
                     <p>We stay up-to-date with the latest regulations, techniques, and safety requirements through ongoing education.</p>
                 </div>
@@ -91,181 +124,15 @@
     </section>
 
     <!-- Detailed Accreditations -->
-    <section class="section" style="background-color: var(--color-light-gray);">
+    <section class="section section--gray">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header text-center">
                 <h2 class="section-title">Our Professional Certifications</h2>
                 <p class="section-subtitle">Each certification represents our commitment to excellence and safety</p>
             </div>
-            
-            <!-- Gas Safe Registration -->
-            <div class="accreditation-detail mb-4">
-                <div class="card">
-                    <div class="grid grid-2" style="align-items: center;">
-                        <div>
-                            <div class="flex" style="align-items: center; margin-bottom: 1rem;">
-                                <img src="images/placeholder.svg" alt="Gas Safe Registered Logo" style="width: 80px; height: 80px; margin-right: 1rem; border-radius: var(--border-radius);">
-                                <div>
-                                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Gas Safe Registered</h3>
-                                    <p style="color: var(--color-secondary); font-weight: 600;">Registration: 123456</p>
-                                    <p style="color: #27ae60; font-size: 0.9rem;">✅ Valid until: March 15, 2025</p>
-                                </div>
-                            </div>
-                            <p>By law, all gas work must be carried out by a Gas Safe registered engineer. Our registration ensures all gas installations, repairs, and safety checks are completed to the highest safety standards.</p>
-                            
-                            <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem;">What this covers:</h4>
-                            <ul style="margin-bottom: 1rem;">
-                                <li>Gas boiler installation and servicing</li>
-                                <li>Gas hob and oven connections</li>
-                                <li>Gas safety certificates</li>
-                                <li>Emergency gas repairs</li>
-                                <li>Leak detection and repair</li>
-                            </ul>
-                            
-                            <a href="https://www.gassaferegister.co.uk/find-an-engineer/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Verify Registration</a>
-                        </div>
-                        
-                        <div class="text-center">
-                            <div style="background: #f8f9fa; padding: 2rem; border-radius: var(--border-radius); border: 2px solid var(--color-secondary);">
-                                <h4 style="color: var(--color-primary);">Gas Safe Benefits</h4>
-                                <ul style="text-align: left; margin-top: 1rem;">
-                                    <li>✅ Legal compliance</li>
-                                    <li>✅ Insurance validity</li>
-                                    <li>✅ Safety guarantee</li>
-                                    <li>✅ Annual inspections</li>
-                                    <li>✅ Emergency support</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- NICEIC Approved -->
-            <div class="accreditation-detail mb-4">
-                <div class="card">
-                    <div class="grid grid-2" style="align-items: center;">
-                        <div style="order: 2;">
-                            <div class="flex" style="align-items: center; margin-bottom: 1rem;">
-                                <img src="images/placeholder.svg" alt="NICEIC Approved Logo" style="width: 80px; height: 80px; margin-right: 1rem; border-radius: var(--border-radius);">
-                                <div>
-                                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">NICEIC Approved Contractor</h3>
-                                    <p style="color: var(--color-secondary); font-weight: 600;">Registration: ABC123</p>
-                                    <p style="color: #27ae60; font-size: 0.9rem;">✅ Valid until: June 30, 2025</p>
-                                </div>
-                            </div>
-                            <p>NICEIC is the UK's leading voluntary regulatory body for the electrical contracting industry. Our approved contractor status demonstrates technical competence and adherence to industry standards.</p>
-                            
-                            <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem;">What this covers:</h4>
-                            <ul style="margin-bottom: 1rem;">
-                                <li>Electrical installations and testing</li>
-                                <li>Consumer unit upgrades</li>
-                                <li>Electrical safety certificates</li>
-                                <li>Kitchen and bathroom electrics</li>
-                                <li>Extension electrical work</li>
-                            </ul>
-                            
-                            <a href="https://www.niceic.com/find-a-contractor" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Verify Registration</a>
-                        </div>
-                        
-                        <div class="text-center" style="order: 1;">
-                            <div style="background: #f1f8ff; padding: 2rem; border-radius: var(--border-radius); border: 2px solid var(--color-accent);">
-                                <h4 style="color: var(--color-primary);">NICEIC Benefits</h4>
-                                <ul style="text-align: left; margin-top: 1rem;">
-                                    <li>✅ Technical competence</li>
-                                    <li>✅ Regular assessments</li>
-                                    <li>✅ Quality guarantee</li>
-                                    <li>✅ Complaint resolution</li>
-                                    <li>✅ Insurance backing</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- FMB Membership -->
-            <div class="accreditation-detail mb-4">
-                <div class="card">
-                    <div class="grid grid-2" style="align-items: center;">
-                        <div>
-                            <div class="flex" style="align-items: center; margin-bottom: 1rem;">
-                                <img src="images/placeholder.svg" alt="FMB Member Logo" style="width: 80px; height: 80px; margin-right: 1rem; border-radius: var(--border-radius);">
-                                <div>
-                                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Federation of Master Builders</h3>
-                                    <p style="color: var(--color-secondary); font-weight: 600;">Member: FMB789</p>
-                                    <p style="color: #27ae60; font-size: 0.9rem;">✅ Valid until: December 31, 2025</p>
-                                </div>
-                            </div>
-                            <p>The FMB is the UK's largest trade association in the building industry. Membership demonstrates our commitment to high standards, quality workmanship, and customer service.</p>
-                            
-                            <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem;">Member benefits include:</h4>
-                            <ul style="margin-bottom: 1rem;">
-                                <li>Quality assurance standards</li>
-                                <li>Customer protection schemes</li>
-                                <li>Ongoing professional development</li>
-                                <li>Industry best practice guidance</li>
-                                <li>Dispute resolution service</li>
-                            </ul>
-                            
-                            <a href="https://www.fmb.org.uk/find-a-builder/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Verify Membership</a>
-                        </div>
-                        
-                        <div class="text-center">
-                            <div style="background: #f0f8f0; padding: 2rem; border-radius: var(--border-radius); border: 2px solid var(--color-secondary);">
-                                <h4 style="color: var(--color-primary);">FMB Advantages</h4>
-                                <ul style="text-align: left; margin-top: 1rem;">
-                                    <li>✅ Vetted contractors</li>
-                                    <li>✅ Quality standards</li>
-                                    <li>✅ Customer protection</li>
-                                    <li>✅ Professional ethics</li>
-                                    <li>✅ Industry expertise</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Checkatrade Approved -->
-            <div class="accreditation-detail mb-4">
-                <div class="card">
-                    <div class="grid grid-2" style="align-items: center;">
-                        <div style="order: 2;">
-                            <div class="flex" style="align-items: center; margin-bottom: 1rem;">
-                                <img src="images/placeholder.svg" alt="Checkatrade Approved Logo" style="width: 80px; height: 80px; margin-right: 1rem; border-radius: var(--border-radius);">
-                                <div>
-                                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Checkatrade Approved</h3>
-                                    <p style="color: var(--color-secondary); font-weight: 600;">Member: 456789</p>
-                                    <p style="color: #27ae60; font-size: 0.9rem;">✅ Valid until: August 15, 2025</p>
-                                </div>
-                            </div>
-                            <p>Checkatrade is the UK's number one website for finding quality-assessed tradespeople. Our membership demonstrates consistent high-quality work and customer satisfaction.</p>
-                            
-                            <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem;">Checkatrade verification:</h4>
-                            <ul style="margin-bottom: 1rem;">
-                                <li>Identity and address verification</li>
-                                <li>Insurance and qualification checks</li>
-                                <li>Customer review monitoring</li>
-                                <li>Quality assessment visits</li>
-                                <li>Continuous performance monitoring</li>
-                            </ul>
-                            
-                            <a href="https://www.checkatrade.com/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View Our Reviews</a>
-                        </div>
-                        
-                        <div class="text-center" style="order: 1;">
-                            <div style="background: #fff5f5; padding: 2rem; border-radius: var(--border-radius); border: 2px solid #e67e22;">
-                                <h4 style="color: var(--color-primary);">Review Highlights</h4>
-                                <div style="margin-top: 1rem;">
-                                    <div style="font-size: 2rem; color: #f39c12; margin-bottom: 0.5rem;">★★★★★</div>
-                                    <p style="font-weight: 600; color: var(--color-secondary);">4.9/5 Average Rating</p>
-                                    <p style="font-size: 0.9rem;">Based on 150+ reviews</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="accreditations-list" data-accreditations>
+                <!-- Accreditations will be populated dynamically -->
             </div>
         </div>
     </section>
@@ -273,49 +140,27 @@
     <!-- Insurance & Warranties -->
     <section class="section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header text-center">
                 <h2 class="section-title">Insurance & Warranties</h2>
                 <p class="section-subtitle">Comprehensive protection for every project</p>
             </div>
-            
+
             <div class="grid grid-2">
                 <div class="card">
-                    <h3 class="card-title">🛡️ Public Liability Insurance</h3>
+                    <h3 class="card-title">&#128737; Public Liability Insurance</h3>
                     <div class="card-content">
                         <p><strong>Coverage:</strong> £2,000,000</p>
                         <p><strong>Provider:</strong> Leading UK Insurer</p>
-                        <p><strong>Valid Until:</strong> December 2024</p>
                         <p>Protects you and your property against any accidental damage or injury during our work on your premises.</p>
                     </div>
                 </div>
-                
+
                 <div class="card">
-                    <h3 class="card-title">🔧 Workmanship Guarantee</h3>
+                    <h3 class="card-title">&#128295; Workmanship Guarantee</h3>
                     <div class="card-content">
                         <p><strong>Duration:</strong> 5 Years</p>
                         <p><strong>Coverage:</strong> All Labor & Installation</p>
-                        <p><strong>Support:</strong> Free Return Visits</p>
                         <p>We guarantee all our workmanship for 5 years. If any issues arise from our work, we'll return to fix it free of charge.</p>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <h3 class="card-title">📋 Product Warranties</h3>
-                    <div class="card-content">
-                        <p><strong>Materials:</strong> Manufacturer Warranty</p>
-                        <p><strong>Duration:</strong> Varies by Product</p>
-                        <p><strong>Administration:</strong> We Handle Claims</p>
-                        <p>All materials come with manufacturer warranties. We handle all warranty claims and administration on your behalf.</p>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <h3 class="card-title">💰 Deposit Protection</h3>
-                    <div class="card-content">
-                        <p><strong>Scheme:</strong> Government Approved</p>
-                        <p><strong>Coverage:</strong> Full Deposit Amount</p>
-                        <p><strong>Security:</strong> Independent Protection</p>
-                        <p>Your deposit is protected through a government-approved scheme, ensuring your money is safe throughout the project.</p>
                     </div>
                 </div>
             </div>
@@ -323,73 +168,60 @@
     </section>
 
     <!-- Call to Action -->
-    <section class="section" style="background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%); color: white;">
-        <div class="container">
-            <div class="text-center">
-                <h2 style="color: white; margin-bottom: 1rem;">Ready to Work with Certified Professionals?</h2>
-                <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">Get a free quote from London's most trusted building professionals</p>
-                
-                <div class="btn-group">
-                    <a href="contact.html" class="btn btn-large" style="background: white; color: var(--color-primary);">Get Free Quote</a>
-                    <a href="booking.html" class="btn btn-secondary btn-large" style="border-color: white; color: white;">Book Consultation</a>
-                </div>
-                
-                <div style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.8;">
-                    <p>✅ Fully Certified • ✅ Fully Insured • ✅ 5-Year Guarantee</p>
-                </div>
+    <section class="section section--accent">
+        <div class="container text-center">
+            <h2>Ready to Work with Certified Professionals?</h2>
+            <p class="section-subtitle">Get a free quote from trusted building professionals</p>
+            <div class="btn-group">
+                <a href="contact.html" class="btn btn--white">Get Free Quote</a>
+                <a href="tel:+447700900123" class="btn btn--outline-white">Call Now</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Colin's Building Services</h3>
-                    <p>Professional construction services with over 15 years of experience. Quality workmanship, competitive prices, and exceptional customer service.</p>
-                    <div class="social-links">
-                        <!-- Social links will be populated dynamically -->
+        <div class="footer__container container">
+            <div class="footer__grid">
+                <div class="footer__column footer__column--brand">
+                    <h3 class="footer__title">Raiswell Building Services</h3>
+                    <p class="footer__description">Professional building services with over 15 years of experience.</p>
+                    <div class="footer__social" data-social-links></div>
+                </div>
+                <div class="footer__column">
+                    <h4 class="footer__heading">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Portfolio</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h4 class="footer__heading">Follow Us</h4>
+                    <div class="footer__social-links" data-social-links></div>
+                </div>
+                <div class="footer__column">
+                    <h4 class="footer__heading">Contact Info</h4>
+                    <div class="footer__contact">
+                        <p><strong>Phone:</strong> <a href="tel:+447700900123" data-phone>+44 7700 900123</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:colin@raiswell.com" data-email>colin@raiswell.com</a></p>
+                        <p data-address></p>
                     </div>
                 </div>
-                
-                <div class="footer-section">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="services.html#extensions">Home Extensions</a></li>
-                        <li><a href="services.html#kitchens">Kitchen Fitting</a></li>
-                        <li><a href="services.html#bathrooms">Bathroom Renovations</a></li>
-                        <li><a href="services.html#general">General Building</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="gallery.html">Project Gallery</a></li>
-                        <li><a href="accreditation.html">Certifications</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="booking.html">Book Consultation</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Contact Info</h3>
-                    <p>📞 <a href="tel:+447700900123" data-phone>+44 7700 900123</a></p>
-                    <p>✉️ <a href="mailto:colin@colinbuilds.co.uk" data-email>colin@colinbuilds.co.uk</a></p>
-                    <p>📍 <span data-address>45 High Street<br>Orpington, BR6 0JH</span></p>
-                </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p data-copyright>&copy; 2024 Colin's Professional Building Services. All rights reserved.</p>
+            <div class="footer__bottom">
+                <p data-copyright>&copy; 2025 Raiswell Building Services. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
+    <script src="js/compiled-config.js"></script>
     <script src="js/xml-parser.js"></script>
+    <script src="js/feature-manager.js"></script>
+    <script src="js/mobile-menu.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/theme-switcher.js"></script>
 </body>
 </html>

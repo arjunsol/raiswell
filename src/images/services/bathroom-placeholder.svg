@@ -1,0 +1,123 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="tileGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F0F8FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E6F3FF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bathGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F5F5F5;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background wall -->
+  <rect width="100%" height="100%" fill="url(#tileGrad)"/>
+  
+  <!-- Floor -->
+  <rect x="0" y="220" width="100%" height="80" fill="#E6E6FA"/>
+  
+  <!-- Floor tiles pattern -->
+  <g stroke="#D8BFD8" stroke-width="1" fill="none">
+    <line x1="0" y1="240" x2="400" y2="240"/>
+    <line x1="0" y1="260" x2="400" y2="260"/>
+    <line x1="0" y1="280" x2="400" y2="280"/>
+    <line x1="50" y1="220" x2="50" y2="300"/>
+    <line x1="100" y1="220" x2="100" y2="300"/>
+    <line x1="150" y1="220" x2="150" y2="300"/>
+    <line x1="200" y1="220" x2="200" y2="300"/>
+    <line x1="250" y1="220" x2="250" y2="300"/>
+    <line x1="300" y1="220" x2="300" y2="300"/>
+    <line x1="350" y1="220" x2="350" y2="300"/>
+  </g>
+  
+  <!-- Wall tiles pattern -->
+  <g stroke="#E0E6FF" stroke-width="0.5" fill="none">
+    <line x1="0" y1="40" x2="400" y2="40"/>
+    <line x1="0" y1="60" x2="400" y2="60"/>
+    <line x1="0" y1="80" x2="400" y2="80"/>
+    <line x1="0" y1="100" x2="400" y2="100"/>
+    <line x1="0" y1="120" x2="400" y2="120"/>
+    <line x1="0" y1="140" x2="400" y2="140"/>
+    <line x1="0" y1="160" x2="400" y2="160"/>
+    <line x1="0" y1="180" x2="400" y2="180"/>
+    <line x1="0" y1="200" x2="400" y2="200"/>
+    <line x1="40" y1="0" x2="40" y2="220"/>
+    <line x1="80" y1="0" x2="80" y2="220"/>
+    <line x1="120" y1="0" x2="120" y2="220"/>
+    <line x1="160" y1="0" x2="160" y2="220"/>
+    <line x1="200" y1="0" x2="200" y2="220"/>
+    <line x1="240" y1="0" x2="240" y2="220"/>
+    <line x1="280" y1="0" x2="280" y2="220"/>
+    <line x1="320" y1="0" x2="320" y2="220"/>
+    <line x1="360" y1="0" x2="360" y2="220"/>
+  </g>
+  
+  <!-- Bathtub -->
+  <ellipse cx="120" cy="180" rx="80" ry="25" fill="url(#bathGrad)" stroke="#C0C0C0" stroke-width="2"/>
+  <ellipse cx="120" cy="175" rx="75" ry="20" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  
+  <!-- Bathtub faucet -->
+  <rect x="118" y="155" width="4" height="15" fill="#C0C0C0"/>
+  <circle cx="120" cy="150" r="3" fill="#C0C0C0"/>
+  <circle cx="115" cy="150" r="2" fill="#C0C0C0"/>
+  <circle cx="125" cy="150" r="2" fill="#C0C0C0"/>
+  
+  <!-- Toilet -->
+  <ellipse cx="320" cy="190" rx="25" ry="15" fill="url(#bathGrad)" stroke="#C0C0C0" stroke-width="2"/>
+  <rect x="310" y="160" width="20" height="30" rx="10" fill="url(#bathGrad)" stroke="#C0C0C0" stroke-width="2"/>
+  <rect x="305" y="140" width="30" height="20" rx="5" fill="url(#bathGrad)" stroke="#C0C0C0" stroke-width="2"/>
+  
+  <!-- Toilet seat -->
+  <ellipse cx="320" cy="160" rx="12" ry="8" fill="none" stroke="#A0A0A0" stroke-width="2"/>
+  
+  <!-- Vanity unit -->
+  <rect x="250" y="120" width="60" height="40" fill="#8B4513" stroke="#654321" stroke-width="2"/>
+  <rect x="255" y="115" width="50" height="5" fill="#DCDCDC" stroke="#C0C0C0" stroke-width="1"/>
+  
+  <!-- Sink basin -->
+  <ellipse cx="280" cy="115" rx="20" ry="10" fill="url(#bathGrad)" stroke="#C0C0C0" stroke-width="2"/>
+  <ellipse cx="280" cy="113" rx="15" ry="7" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  
+  <!-- Sink faucet -->
+  <rect x="278" y="105" width="4" height="8" fill="#C0C0C0"/>
+  <circle cx="280" cy="100" r="2" fill="#C0C0C0"/>
+  
+  <!-- Vanity handles -->
+  <rect x="265" y="135" width="6" height="2" rx="1" fill="#C0C0C0"/>
+  <rect x="285" y="135" width="6" height="2" rx="1" fill="#C0C0C0"/>
+  
+  <!-- Mirror -->
+  <rect x="240" y="60" width="80" height="60" fill="#E6F3FF" stroke="#C0C0C0" stroke-width="2"/>
+  <rect x="245" y="65" width="70" height="50" fill="#F0F8FF" stroke="#D0D0D0" stroke-width="1"/>
+  
+  <!-- Mirror reflection effect -->
+  <rect x="245" y="65" width="70" height="50" fill="url(#tileGrad)" opacity="0.3"/>
+  
+  <!-- Shower area -->
+  <rect x="30" y="80" width="80" height="100" fill="none" stroke="#C0C0C0" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- Shower head -->
+  <circle cx="70" cy="90" r="8" fill="#C0C0C0" stroke="#A0A0A0" stroke-width="1"/>
+  <circle cx="70" cy="90" r="5" fill="#E0E0E0"/>
+  
+  <!-- Shower controls -->
+  <circle cx="50" cy="120" r="6" fill="#C0C0C0" stroke="#A0A0A0" stroke-width="1"/>
+  <circle cx="50" cy="140" r="6" fill="#C0C0C0" stroke="#A0A0A0" stroke-width="1"/>
+  
+  <!-- Towel rack -->
+  <rect x="350" y="100" width="30" height="3" fill="#C0C0C0"/>
+  <rect x="350" y="130" width="30" height="3" fill="#C0C0C0"/>
+  <rect x="350" y="100" width="3" height="33" fill="#C0C0C0"/>
+  <rect x="377" y="100" width="3" height="33" fill="#C0C0C0"/>
+  
+  <!-- Towel -->
+  <rect x="355" y="105" width="20" height="40" fill="#FFB6C1" stroke="#FF69B4" stroke-width="1"/>
+  
+  <!-- Title -->
+  <text x="200" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2C3E50">
+    Bathroom Renovations
+  </text>
+  <text x="200" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#7F8C8D">
+    Complete Suite Installation
+  </text>
+</svg>

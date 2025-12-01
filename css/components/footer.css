@@ -1,0 +1,357 @@
+/* ===================================================================
+   Footer Component Styles
+   Based on KJS Lofts design system
+   =================================================================== */
+
+/* ===================================================================
+   Footer Wrapper
+   =================================================================== */
+
+.footer {
+    background-color: #212121;
+    color: #ffffff;
+    padding: 60px 0 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ===================================================================
+   Footer Inner Container
+   =================================================================== */
+
+.footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===================================================================
+   Footer Widgets Grid
+   =================================================================== */
+
+.footer__widgets {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* ===================================================================
+   Individual Widget
+   =================================================================== */
+
+.footer__widget {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__widget-title {
+    color: #0fb6ee;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid rgba(15, 182, 238, 0.2);
+}
+
+.footer__widget p {
+    margin: 0 0 15px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* ===================================================================
+   Footer Links
+   =================================================================== */
+
+.footer__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer__links li {
+    margin-bottom: 12px;
+}
+
+.footer__links a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+}
+
+.footer__links a:hover {
+    color: #0fb6ee;
+    padding-left: 5px;
+}
+
+.footer__links a::before {
+    content: '›';
+    position: absolute;
+    left: -15px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.footer__links a:hover::before {
+    opacity: 1;
+    left: -10px;
+}
+
+/* ===================================================================
+   Footer Social Icons
+   =================================================================== */
+
+.footer__social {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.footer__social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer__social a:hover {
+    background-color: #0fb6ee;
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+.footer__social i,
+.footer__social svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* ===================================================================
+   Footer Contact Info
+   =================================================================== */
+
+.footer__contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.footer__contact-item i,
+.footer__contact-item svg {
+    color: #0fb6ee;
+    font-size: 16px;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.footer__contact-item a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer__contact-item a:hover {
+    color: #0fb6ee;
+}
+
+/* ===================================================================
+   Footer Bottom / Copyright Bar
+   =================================================================== */
+
+.footer__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 25px 0;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+}
+
+.footer__bottom a {
+    color: #0fb6ee;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer__bottom a:hover {
+    color: #ffffff;
+}
+
+.footer__copyright {
+    margin: 0;
+}
+
+/* ===================================================================
+   Footer Logo (if applicable)
+   =================================================================== */
+
+.footer__logo {
+    margin-bottom: 20px;
+}
+
+.footer__logo img {
+    max-height: 60px;
+    width: auto;
+}
+
+/* ===================================================================
+   Responsive: Tablet (768px - 959px)
+   =================================================================== */
+
+@media screen and (max-width: 959px) {
+    .footer {
+        padding: 50px 0 0;
+    }
+
+    .footer__widgets {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+        margin-bottom: 35px;
+    }
+
+    .footer__widget-title {
+        font-size: 15px;
+    }
+
+    .footer__social a {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+}
+
+/* ===================================================================
+   Responsive: Mobile (<768px)
+   =================================================================== */
+
+@media screen and (max-width: 767px) {
+    .footer {
+        padding: 40px 0 0;
+    }
+
+    .footer__inner {
+        padding: 0 15px;
+    }
+
+    .footer__widgets {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .footer__widget {
+        text-align: center;
+    }
+
+    .footer__widget-title {
+        font-size: 14px;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+    }
+
+    .footer__links {
+        text-align: center;
+    }
+
+    .footer__links a::before {
+        display: none;
+    }
+
+    .footer__links a:hover {
+        padding-left: 0;
+    }
+
+    .footer__social {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .footer__social a {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .footer__contact-item {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .footer__contact-item i,
+    .footer__contact-item svg {
+        margin-top: 0;
+    }
+
+    .footer__bottom {
+        padding: 20px 0;
+        font-size: 12px;
+    }
+
+    .footer__logo {
+        text-align: center;
+    }
+}
+
+/* ===================================================================
+   Utility Classes
+   =================================================================== */
+
+.footer__widget--about p:last-child {
+    margin-bottom: 0;
+}
+
+.footer__links li:last-child {
+    margin-bottom: 0;
+}
+
+/* Small print text for disclaimers */
+.footer__small-print {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 15px;
+}
+
+/* Accent line separator */
+.footer__separator {
+    width: 60px;
+    height: 3px;
+    background-color: #0fb6ee;
+    margin: 20px 0;
+}
+
+/* ===================================================================
+   Accessibility Enhancements
+   =================================================================== */
+
+.footer__links a:focus,
+.footer__social a:focus,
+.footer__contact-item a:focus {
+    outline: 2px solid #0fb6ee;
+    outline-offset: 2px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    .footer__links a,
+    .footer__social a,
+    .footer__contact-item a {
+        transition: none;
+    }
+
+    .footer__social a:hover {
+        transform: none;
+    }
+}

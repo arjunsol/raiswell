@@ -1,0 +1,45 @@
+{
+    "name": "Raiswell Building Services",
+    "tagline": "Professional building services with over 15 years of experience",
+    "phone": "+447700900123",
+    "phoneDisplay": "+44 7700 900123",
+    "email": "colin@raiswell.com",
+    "logo": "/images/hero/company-logo.png",
+    "navigation": [
+        { "text": "Home", "url": "/" },
+        { "text": "About", "url": "/about/" },
+        { "text": "Services", "url": "/services/" },
+        { "text": "Portfolio", "url": "/gallery/" },
+        { "text": "Testimonials", "url": "/testimonials/" },
+        { "text": "Contact", "url": "/contact/" }
+    ],
+    "footerLinks": [
+        { "text": "About Us", "url": "/about/" },
+        { "text": "Services", "url": "/services/" },
+        { "text": "Portfolio", "url": "/gallery/" },
+        { "text": "Testimonials", "url": "/testimonials/" },
+        { "text": "Contact", "url": "/contact/" }
+    ],
+    "fonts": {
+        "google": "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap"
+    },
+    "stylesheets": [
+        "css/main.css",
+        "css/components/top-bar.css",
+        "css/components/header.css",
+        "css/components/hero-slider.css",
+        "css/components/testimonials.css",
+        "css/components/footer.css",
+        "css/components/page-header.css",
+        "css/responsive.css"
+    ],
+    "scripts": [
+        "js/compiled-config.js",
+        "js/xml-parser.js",
+        "js/feature-manager.js",
+        "js/mobile-menu.js",
+        "js/testimonials-slider.js",
+        "js/hero-slider.js",
+        "js/main.js"
+    ]
+}

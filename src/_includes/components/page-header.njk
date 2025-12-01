@@ -1,0 +1,11 @@
+{# Page Header component - title and breadcrumb #}
+<section class="page-header">
+    <div class="page-header__container container">
+        <h1 class="page-header__title">{{ pageTitle | default(title) }}</h1>
+        <nav class="page-header__breadcrumb">
+            <a href="/">Home</a>
+            <span class="separator">&raquo;</span>
+            <span class="current">{{ breadcrumb | default(title) }}</span>
+        </nav>
+    </div>
+</section>

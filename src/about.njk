@@ -1,0 +1,128 @@
+---
+layout: page.njk
+title: About Us
+description: About Raiswell Building Services - Professional building company with over 15 years experience in London and the South East. Family-run business committed to quality.
+breadcrumb: About Us
+extraStyles:
+  - css/pages/about.css
+---
+
+<!-- About Section -->
+<section class="section about-section">
+    <div class="container">
+        <div class="grid grid-2">
+            <div class="about-content">
+                <h2 data-about-title>Who We Are</h2>
+                <div data-about-content>
+                    <p>Raiswell Building Services is a professional building company that provides a high level of service to all of its customers and looks to exceed expectations in all aspects of building.</p>
+                    <p>As a family-run business, we strive to offer extra care and consideration for all of our customers when carrying out projects which are shown by our vast amount of recommendations and highly thought of reputation.</p>
+                    <p>With over fifteen years of experience in the construction industry, we guarantee that no project is too big or small for our experienced tradesmen to complete.</p>
+                    <p>We work in compliance with all of the latest building regulations ensuring our work is guaranteed, safe and of high quality.</p>
+                    <p>For any enquiries, questions or if you are requiring further information, please do not hesitate to contact us.</p>
+                </div>
+                <div class="about-cta">
+                    <a href="/contact/" class="btn btn-primary">Contact Us</a>
+                </div>
+            </div>
+            <div class="about-image">
+                <div class="about-slider" data-about-slider>
+                    <div class="about-slider__slides">
+                        <img src="/images/about/team-1.jpg" alt="Our team at work" class="about-slider__slide active">
+                        <img src="/images/about/project-1.jpg" alt="Recent project" class="about-slider__slide">
+                        <img src="/images/about/project-2.jpg" alt="Quality work" class="about-slider__slide">
+                    </div>
+                    <div class="about-slider__dots"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Our Values -->
+<section class="section section--gray">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2 class="section-title">Our Values</h2>
+            <p class="section-subtitle">The principles that guide everything we do</p>
+        </div>
+
+        <div class="grid grid-3">
+            <div class="card text-center">
+                <div class="card-icon">&#128170;</div>
+                <h3 class="card-title">Quality Workmanship</h3>
+                <p>We never compromise on quality. Every project is completed to the highest standards with attention to detail.</p>
+            </div>
+
+            <div class="card text-center">
+                <div class="card-icon">&#129309;</div>
+                <h3 class="card-title">Customer Focus</h3>
+                <p>Your satisfaction is our priority. We listen, communicate, and deliver exactly what you envision.</p>
+            </div>
+
+            <div class="card text-center">
+                <div class="card-icon">&#128176;</div>
+                <h3 class="card-title">Fair Pricing</h3>
+                <p>Transparent quotes with no hidden costs. We believe in honest pricing and delivering value.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="section section--accent">
+    <div class="container text-center">
+        <h2>Ready to Start Your Project?</h2>
+        <p class="section-subtitle">Get in touch for a free, no-obligation consultation</p>
+        <div class="btn-group">
+            <a href="/contact/" class="btn btn--white">Get Free Quote</a>
+            <a href="tel:{{ site.phone }}" class="btn btn--outline-white">Call Now</a>
+        </div>
+    </div>
+</section>
+
+<script>
+// About page slider functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.querySelector('[data-about-slider]');
+    if (!slider) return;
+
+    const slides = slider.querySelectorAll('.about-slider__slide');
+    const dotsContainer = slider.querySelector('.about-slider__dots');
+    let currentSlide = 0;
+    let slideInterval;
+
+    // Create dots
+    slides.forEach((_, index) => {
+        const dot = document.createElement('span');
+        dot.className = 'about-slider__dot' + (index === 0 ? ' active' : '');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll('.about-slider__dot');
+
+    function goToSlide(index) {
+        slides[currentSlide].classList.remove('active');
+        dots[currentSlide].classList.remove('active');
+        currentSlide = index;
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() {
+        goToSlide((currentSlide + 1) % slides.length);
+    }
+
+    function startSlider() {
+        slideInterval = setInterval(nextSlide, 5000);
+    }
+
+    function stopSlider() {
+        clearInterval(slideInterval);
+    }
+
+    startSlider();
+    slider.addEventListener('mouseenter', stopSlider);
+    slider.addEventListener('mouseleave', startSlider);
+});
+</script>

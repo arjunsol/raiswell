@@ -1,0 +1,127 @@
+---
+layout: page.njk
+title: Portfolio
+description: View our project portfolio - Home extensions, kitchen fitting, bathroom renovations across London and South East England.
+breadcrumb: Portfolio
+extraStyles:
+  - css/components/masonry-grid.css
+  - css/pages/gallery.css
+---
+
+<!-- Category Filter -->
+<section class="section filter-section">
+    <div class="container text-center">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="extensions">Extensions</button>
+            <button class="filter-btn" data-filter="kitchens">Kitchens</button>
+            <button class="filter-btn" data-filter="bathrooms">Bathrooms</button>
+            <button class="filter-btn" data-filter="general">General</button>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Grid -->
+<section class="gallery-section">
+    <div class="masonry-grid cols-4 gap-none full-width" data-gallery id="gallery-grid">
+        <div class="masonry-grid__item" data-category="extensions">
+            <img src="/images/gallery/extension-modern.jpg" alt="Extension project" class="masonry-grid__image" loading="lazy">
+            <div class="masonry-grid__overlay">
+                <span class="masonry-grid__title">Modern Extension</span>
+            </div>
+        </div>
+
+        <div class="masonry-grid__item" data-category="kitchens">
+            <img src="/images/gallery/kitchen-contemporary.jpg" alt="Kitchen renovation" class="masonry-grid__image" loading="lazy">
+            <div class="masonry-grid__overlay">
+                <span class="masonry-grid__title">Contemporary Kitchen</span>
+            </div>
+        </div>
+
+        <div class="masonry-grid__item" data-category="bathrooms">
+            <img src="/images/gallery/bathroom-luxury.jpg" alt="Bathroom renovation" class="masonry-grid__image" loading="lazy">
+            <div class="masonry-grid__overlay">
+                <span class="masonry-grid__title">Luxury Bathroom</span>
+            </div>
+        </div>
+
+        <div class="masonry-grid__item" data-category="general">
+            <img src="/images/gallery/general-work.jpg" alt="General building work" class="masonry-grid__image" loading="lazy">
+            <div class="masonry-grid__overlay">
+                <span class="masonry-grid__title">Renovation Work</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <span class="lightbox__close" id="lightbox-close">&times;</span>
+    <img src="" alt="Gallery image" id="lightbox-img">
+</div>
+
+<!-- Call to Action -->
+<section class="section section--accent">
+    <div class="container text-center">
+        <h2>Like What You See?</h2>
+        <p class="section-subtitle">Get in touch to discuss your project</p>
+        <div class="btn-group">
+            <a href="/contact/" class="btn btn--white">Get Free Quote</a>
+            <a href="tel:{{ site.phone }}" class="btn btn--outline-white">Call Now</a>
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.masonry-grid__item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    // Filter functionality
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.dataset.filter;
+
+            items.forEach(item => {
+                if (filter === 'all' || item.dataset.category === filter) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // Lightbox functionality
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            const img = item.querySelector('img');
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.classList.add('active');
+        });
+    });
+
+    lightboxClose.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+    });
+
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('active');
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            lightbox.classList.remove('active');
+        }
+    });
+});
+</script>

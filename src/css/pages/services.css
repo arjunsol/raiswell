@@ -1,0 +1,77 @@
+/* Services Page Styles */
+.intro-section {
+    padding: 3rem 0;
+}
+
+.lead {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--color-text-light, #555);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.service-detail {
+    padding: 4rem 0;
+}
+
+.service-image {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-content h2 {
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: 2rem;
+    color: var(--color-primary, #212121);
+    margin-bottom: 1rem;
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.service-features li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.service-features li::before {
+    content: "\2713";
+    position: absolute;
+    left: 0;
+    color: var(--color-accent, #0fb6ee);
+    font-weight: bold;
+}
+
+.service-meta {
+    color: var(--color-text-light, #666);
+    margin: 1.5rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .service-detail {
+        padding: 3rem 0;
+    }
+
+    .service-content h2 {
+        font-size: 1.75rem;
+    }
+
+    .service-image-wrapper {
+        margin-bottom: 2rem;
+    }
+
+    .order-sm-1 {
+        order: 1 !important;
+    }
+
+    .order-sm-2 {
+        order: 2 !important;
+    }
+}

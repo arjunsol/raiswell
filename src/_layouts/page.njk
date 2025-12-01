@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "components/head.njk" %}
+</head>
+<body>
+    {% include "components/top-bar.njk" %}
+    {% include "components/header.njk" %}
+    {% include "components/mobile-menu.njk" %}
+
+    {% include "components/page-header.njk" %}
+
+    <main>
+        {{ content | safe }}
+    </main>
+
+    {% include "components/footer.njk" %}
+    {% include "components/scripts.njk" %}
+</body>
+</html>

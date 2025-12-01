@@ -1,0 +1,9 @@
+{# Scripts component - JavaScript includes #}
+{% for script in site.scripts %}
+<script src="/{{ script }}"></script>
+{% endfor %}
+{% if extraScripts %}
+{% for script in extraScripts %}
+<script src="/{{ script }}"></script>
+{% endfor %}
+{% endif %}

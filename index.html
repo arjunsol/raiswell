@@ -6,103 +6,152 @@
     <meta name="description" content="Professional building services in Manchester. Extensions, kitchens, bathrooms & general building work. Gas Safe registered, NICEIC approved. Free quotes.">
     <meta name="keywords" content="builder manchester, home extensions, kitchen fitting, bathroom renovation, building services, gas safe, niceic">
     <meta name="author" content="Colin's Professional Building Services">
-    
+
     <!-- Open Graph tags -->
     <meta property="og:title" content="Colin's Professional Building Services | Manchester Builder">
     <meta property="og:description" content="Professional building services in Manchester. Extensions, kitchens, bathrooms & general building work. Gas Safe registered, NICEIC approved. Free quotes.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="">
     <meta property="og:image" content="images/hero/company-logo.png">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Roboto+Slab:wght@400;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components/top-bar.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/hero-slider.css">
+    <link rel="stylesheet" href="css/components/testimonials.css">
+    <link rel="stylesheet" href="css/components/footer.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/themes.css">
-    <link rel="stylesheet" href="css/chatbot.css">
-    <link rel="stylesheet" href="css/modals.css">
-    
+
     <title>Colin's Professional Building Services | Manchester Builder</title>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <div class="container">
-                <div class="nav-container">
-                    <div class="logo">
-                        <img src="images/hero/company-logo.png" alt="Colin's Professional Building Services" style="display: none;">
-                        Colin's Building Services
-                    </div>
-                    
-                    <ul class="nav-menu">
-                        <li><a href="index.html" class="nav-link active">Home</a></li>
-                        <li><a href="services.html" class="nav-link">Services</a></li>
-                        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-                        <li><a href="accreditation.html" class="nav-link">Accreditations</a></li>
-                        <li><a href="contact.html" class="nav-link">Contact</a></li>
-                        <li><a href="booking.html" class="nav-link">Book Consultation</a></li>
-                    </ul>
-                    
-                    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-                        ☰
-                    </button>
-                </div>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar__container">
+            <div class="top-bar__content">
+                <a href="tel:+447700900123" class="top-bar__item top-bar__item--phone">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <span data-phone>+44 7700 900123</span>
+                </a>
+                <a href="mailto:colin@colinbuilds.co.uk" class="top-bar__item top-bar__item--email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <span data-email>colin@colinbuilds.co.uk</span>
+                </a>
             </div>
-        </nav>
+            <div class="top-bar__social" data-social-links>
+                <!-- Social links will be populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header__inner container">
+            <a href="/" class="header__logo">
+                <img src="images/logo.png" alt="Colin's Building Services" data-logo>
+            </a>
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-menu__list">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="gallery.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                <span class="hamburger-icon"></span>
+                <span class="menu-text">Menu</span>
+            </button>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-background"></div>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay"></div>
+    <nav class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu__header">
+            <button class="mobile-menu__close" aria-label="Close menu">&times;</button>
+        </div>
+        <ul class="mobile-menu__items">
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="services.html" class="nav-link">Services</a></li>
+            <li><a href="gallery.html" class="nav-link">Portfolio</a></li>
+            <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Slider -->
+    <section class="hero-slider" id="hero-slider">
+        <div class="hero-slider__container">
+            <div class="hero-slider__slides">
+                <!-- Slides will be populated dynamically from XML -->
+            </div>
+            <button class="hero-slider__nav hero-slider__prev" aria-label="Previous slide">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button class="hero-slider__nav hero-slider__next" aria-label="Next slide">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+            <div class="hero-slider__dots"></div>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="section welcome-section">
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Colin's Professional Building Services</h1>
-                <p class="hero-subtitle">Quality Construction You Can Trust</p>
-                <p class="hero-description">Professional building services with over 15 years of experience. Specializing in home extensions, kitchen fitting, bathroom renovations, and general construction work across the UK.</p>
-                
-                <div class="btn-group">
-                    <a href="#services" class="btn btn-primary btn-large">Our Services</a>
-                    <a href="contact.html" class="btn btn-secondary btn-large">Get Free Quote</a>
+            <div class="row">
+                <div class="col-8 col-md-6 col-sm-12">
+                    <h1 data-welcome-title>Welcome to Colin's Professional Building Services</h1>
+                    <div data-welcome-content>
+                        <p>With over 15 years of experience in the construction industry, we pride ourselves on delivering exceptional building services throughout Greater Manchester and the surrounding areas.</p>
+                        <p>From home extensions and kitchen fitting to bathroom renovations and general building work, our team of skilled craftsmen brings quality workmanship and attention to detail to every project.</p>
+                        <p>As Gas Safe registered and NICEIC approved contractors, we're fully certified to handle all aspects of your construction needs. We're also proud members of the Federation of Master Builders, ensuring you receive the highest standards of service and professionalism.</p>
+                    </div>
+                    <div class="btn-group" style="margin-top: 2rem;">
+                        <a href="services.html" class="btn btn-primary">Our Services</a>
+                        <a href="contact.html" class="btn btn-secondary">Get Free Quote</a>
+                    </div>
                 </div>
-                
-                <div class="hero-stats" style="margin-top: 3rem; display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;">
-                    <div class="stat-item" style="text-align: center;">
-                        <div style="font-size: 2rem; font-weight: 700; color: var(--color-secondary);" data-established>2008</div>
-                        <div style="font-size: 0.9rem; opacity: 0.8;">Established</div>
-                    </div>
-                    <div class="stat-item" style="text-align: center;">
-                        <div style="font-size: 2rem; font-weight: 700; color: var(--color-secondary);" data-projects>500+</div>
-                        <div style="font-size: 0.9rem; opacity: 0.8;">Projects Completed</div>
-                    </div>
-                    <div class="stat-item" style="text-align: center;">
-                        <div style="font-size: 2rem; font-weight: 700; color: var(--color-secondary);">15+</div>
-                        <div style="font-size: 0.9rem; opacity: 0.8;">Years Experience</div>
+                <div class="col-4 col-md-6 col-sm-12">
+                    <div class="welcome-badge">
+                        <img src="images/company-badge.png" alt="Colin's Building Services Badge" data-badge>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="section">
+    <!-- Services Preview -->
+    <section class="section services-preview" style="background-color: var(--color-background);">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Our Services</h2>
                 <p class="section-subtitle">Professional construction services tailored to your needs. From small repairs to major extensions, we deliver quality workmanship on every project.</p>
             </div>
-            
-            <div class="services-grid">
-                <!-- Services will be populated dynamically from XML -->
+            <div class="services-grid" data-services>
+                <!-- Service cards will be populated dynamically from XML -->
             </div>
-            
             <div class="text-center mt-4">
                 <a href="services.html" class="btn btn-primary">View All Services</a>
             </div>
@@ -116,61 +165,87 @@
                 <h2 class="section-title">Why Choose Us?</h2>
                 <p class="section-subtitle">We're committed to delivering exceptional results on every project</p>
             </div>
-            
+
             <div class="grid grid-3">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-icon">🏆</div>
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                        </div>
                         <h3 class="card-title">Fully Certified</h3>
                     </div>
                     <div class="card-content">
                         <p>Gas Safe registered, NICEIC approved, and FMB member. All work covered by comprehensive insurance and warranties.</p>
                     </div>
                 </div>
-                
+
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-icon">💪</div>
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
                         <h3 class="card-title">15+ Years Experience</h3>
                     </div>
                     <div class="card-content">
                         <p>Established in 2008, we've completed over 500 successful projects across Greater Manchester.</p>
                     </div>
                 </div>
-                
+
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-icon">⭐</div>
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                        </div>
                         <h3 class="card-title">5-Star Reviews</h3>
                     </div>
                     <div class="card-content">
                         <p>Outstanding customer satisfaction with hundreds of 5-star reviews across Google, Checkatrade, and social media.</p>
                     </div>
                 </div>
-                
+
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-icon">💰</div>
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
                         <h3 class="card-title">Free Quotes</h3>
                     </div>
                     <div class="card-content">
                         <p>No-obligation free quotes with transparent pricing. No hidden costs or surprise charges.</p>
                     </div>
                 </div>
-                
+
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-icon">🔧</div>
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                            </svg>
+                        </div>
                         <h3 class="card-title">Quality Guaranteed</h3>
                     </div>
                     <div class="card-content">
                         <p>All work guaranteed with manufacturer warranties on materials and comprehensive aftercare service.</p>
                     </div>
                 </div>
-                
+
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-icon">📞</div>
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
                         <h3 class="card-title">24/7 Emergency</h3>
                     </div>
                     <div class="card-content">
@@ -181,20 +256,16 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="section">
+    <!-- Testimonials Slider -->
+    <section class="testimonials-slider dark-skin" data-testimonials>
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">What Our Customers Say</h2>
-                <p class="section-subtitle">Don't just take our word for it - hear from our satisfied customers</p>
-            </div>
-            
-            <div class="testimonials-slider">
+            <h3 class="testimonials-slider__title">What Our Clients Say</h3>
+            <div class="testimonials-slider__slides">
                 <!-- Testimonials will be populated dynamically from XML -->
             </div>
-            
-            <div class="text-center mt-4">
-                <a href="https://www.google.com/search?q=Colin%27s+Building+Services+reviews" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Read More Reviews</a>
+            <div class="testimonials-slider__dots"></div>
+            <div class="text-center" style="margin-top: 2rem;">
+                <a href="testimonials.html" class="btn btn-secondary">Read More Reviews</a>
             </div>
         </div>
     </section>
@@ -206,194 +277,98 @@
                 <h2 class="section-title">Fully Licensed & Insured</h2>
                 <p class="section-subtitle">All the certifications and accreditations you need for peace of mind</p>
             </div>
-            
-            <div class="accreditations-grid">
+
+            <div class="accreditations-grid" data-accreditations>
                 <!-- Accreditations will be populated dynamically from XML -->
             </div>
-            
+
             <div class="text-center mt-4">
                 <a href="accreditation.html" class="btn btn-primary">View All Certifications</a>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Ready to start your project? Contact us for a free consultation and quote</p>
-            </div>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">📞</div>
-                    <h3 class="contact-title">Call Us</h3>
-                    <div class="contact-details">
-                        <a href="tel:+447700900123" class="contact-link" data-phone>+44 7700 900123</a><br>
-                        <small>Emergency: <a href="tel:+447700900999" class="contact-link" data-emergency-phone>+44 7700 900999</a></small>
-                    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__inner container">
+            <div class="footer__widgets">
+                <div class="footer__widget">
+                    <h4 class="footer__widget-title">Contact Us</h4>
+                    <p class="footer__contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <a href="tel:+447700900123" data-phone>+44 7700 900123</a>
+                    </p>
+                    <p class="footer__contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <a href="mailto:colin@colinbuilds.co.uk" data-email>colin@colinbuilds.co.uk</a>
+                    </p>
+                    <p class="footer__contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>Emergency: <a href="tel:+447700900999" data-emergency-phone>+44 7700 900999</a></span>
+                    </p>
                 </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">✉️</div>
-                    <h3 class="contact-title">Email Us</h3>
-                    <div class="contact-details">
-                        <a href="mailto:colin@colinbuilds.co.uk" class="contact-link" data-email>colin@colinbuilds.co.uk</a><br>
-                        <small>We reply within 2 hours</small>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">📍</div>
-                    <h3 class="contact-title">Visit Us</h3>
-                    <div class="contact-details" data-address>
+
+                <div class="footer__widget">
+                    <h4 class="footer__widget-title" data-company-name>Colin's Building Services</h4>
+                    <address data-address>
                         45 Builder's Lane<br>
                         Manchester, M1 2AB<br>
                         United Kingdom
-                    </div>
+                    </address>
+                    <p style="margin-top: 1rem;">Professional building services with over 15 years of experience.</p>
                 </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">🕐</div>
-                    <h3 class="contact-title">Opening Hours</h3>
-                    <div class="contact-details" data-hours>
-                        <div><strong>Monday:</strong> 08:00-18:00</div>
-                        <div><strong>Tuesday:</strong> 08:00-18:00</div>
-                        <div><strong>Wednesday:</strong> 08:00-18:00</div>
-                        <div><strong>Thursday:</strong> 08:00-18:00</div>
-                        <div><strong>Friday:</strong> 08:00-18:00</div>
-                        <div><strong>Saturday:</strong> 08:00-16:00</div>
-                        <div><strong>Sunday:</strong> Emergency Only</div>
-                    </div>
+
+                <div class="footer__widget">
+                    <h4 class="footer__widget-title">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Portfolio</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="accreditation.html">Certifications</a></li>
+                    </ul>
                 </div>
-            </div>
-            
-            <div class="text-center mt-4">
-                <div class="btn-group">
-                    <button class="btn btn-primary btn-large" data-quote-trigger>Get Free Quote</button>
-                    <a href="booking.html" class="btn btn-secondary btn-large">Book Consultation</a>
+
+                <div class="footer__widget">
+                    <h4 class="footer__widget-title">Follow Us</h4>
+                    <div class="footer__social" data-social>
+                        <!-- Social icons will be populated dynamically from XML -->
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <h5 style="font-size: 0.9rem; margin-bottom: 0.5rem;">Opening Hours</h5>
+                        <p style="font-size: 0.85rem; line-height: 1.6;">
+                            Mon-Fri: 08:00-18:00<br>
+                            Saturday: 08:00-16:00<br>
+                            Sunday: Emergency Only
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Colin's Building Services</h3>
-                    <p>Professional construction services with over 15 years of experience. Quality workmanship, competitive prices, and exceptional customer service.</p>
-                    <div class="social-links">
-                        <!-- Social links will be populated dynamically -->
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="services.html#extensions">Home Extensions</a></li>
-                        <li><a href="services.html#kitchens">Kitchen Fitting</a></li>
-                        <li><a href="services.html#bathrooms">Bathroom Renovations</a></li>
-                        <li><a href="services.html#general">General Building</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="gallery.html">Project Gallery</a></li>
-                        <li><a href="accreditation.html">Certifications</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="booking.html">Book Consultation</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Contact Info</h3>
-                    <p>📞 <a href="tel:+447700900123" data-phone>+44 7700 900123</a></p>
-                    <p>✉️ <a href="mailto:colin@colinbuilds.co.uk" data-email>colin@colinbuilds.co.uk</a></p>
-                    <p>📍 <span data-address>45 Builder's Lane<br>Manchester, M1 2AB</span></p>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
+        <div class="footer__bottom">
+            <div class="container">
                 <p data-copyright>&copy; 2024 Colin's Professional Building Services. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Loading Overlay -->
-    <style>
-        .loading-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(255, 255, 255, 0.95);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            backdrop-filter: blur(5px);
-        }
-        
-        .loading-spinner {
-            text-align: center;
-        }
-        
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 4px solid var(--color-light-gray);
-            border-top: 4px solid var(--color-secondary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 1rem;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .error-message {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
-        }
-        
-        .error-content {
-            background: white;
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            text-align: center;
-            max-width: 400px;
-            margin: 1rem;
-        }
-        
-        .error-content h3 {
-            color: #e74c3c;
-            margin-bottom: 1rem;
-        }
-    </style>
-
     <!-- Scripts -->
     <script src="js/compiled-config.js"></script>
     <script src="js/xml-parser.js"></script>
     <script src="js/feature-manager.js"></script>
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/hero-slider.js"></script>
+    <script src="js/testimonials-slider.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/theme-switcher.js"></script>
-    <script src="js/forms.js"></script>
-    <script src="js/chatbot.js"></script>
 </body>
 </html>
