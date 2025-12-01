@@ -5,7 +5,7 @@
   "scripts": {
     "build:config": "python build-config.py",
     "build:11ty": "npx @11ty/eleventy",
-    "build": "npm run build:config && npm run build:11ty",
+    "build": "npx @11ty/eleventy",
     "build:azure": "npm run build",
     "start": "npx @11ty/eleventy --serve",
     "dev": "npm run build:config && npx @11ty/eleventy --serve",
