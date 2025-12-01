@@ -11,25 +11,21 @@ This is a professional website for Colin's Building Services - a static HTML/CSS
 ### Building the Configuration (Required for Performance)
 ```bash
 python build-config.py
-```
-Or alternatively:
-```bash
+# Or use NPM scripts:
+npm run build        # Standard build
+npm run dev         # Development mode with debug info
+npm run watch       # Auto-rebuild on XML changes (requires: pip install watchdog)
+# Or Windows batch file:
 build.bat
 ```
-This compiles the XML configuration to optimized JavaScript for ~100-400ms faster page loads.
-
-### Build Options
-```bash
-build.bat --dev      # Development mode with debug info
-build.bat --watch    # Auto-rebuild on XML changes (requires: pip install watchdog)
-```
+This compiles the XML configuration to optimized JavaScript (`js/compiled-config.js`) for ~100-400ms faster page loads.
 
 ### Starting the Development Server
 ```bash
 python server.py
-```
-Or alternatively:
-```bash
+# Or use NPM:
+npm start
+# Or Windows batch file:
 run-server.bat
 ```
 The server runs on port 80 and opens automatically in the browser at `http://localhost:80`.
@@ -39,6 +35,14 @@ If Python server fails:
 ```bash
 npx http-server . -p 8000 -c-1
 ```
+
+### Git Workflow
+This project uses **Git Flow**. All changes must be made in feature branches:
+```bash
+git flow feature start feature-name    # Creates and switches to feature/feature-name
+git flow feature finish feature-name   # Merges back to develop
+```
+**Never commit directly to develop or master branches.**
 
 ## Architecture Overview
 
@@ -60,6 +64,12 @@ The entire site is controlled through `config/site-config.xml` which contains:
 - Extracts and inlines CSS custom properties
 - Optimizes feature toggle lookups
 - Provides fallback to XML loading for development
+
+**Critical Initialization Chain**:
+1. `js/compiled-config.js` loads first (if built) → creates `window.compiledConfig`
+2. `js/xml-parser.js` loads → creates `window.siteConfig`, uses compiled config if available
+3. `js/feature-manager.js` waits for config to be ready → applies feature toggles
+4. Component scripts initialize conditionally based on feature flags
 
 ### Feature Toggle System
 All features can be enabled/disabled via XML configuration in the `<feature-toggles>` section. The feature manager (`js/feature-manager.js`) reads these toggles and conditionally initializes components.
@@ -117,9 +127,28 @@ The site includes comprehensive fallback systems:
 - Feature toggles allow disabling expensive components (analytics, Instagram integration)
 - XML parsing is cached client-side
 
+## Deployment
+
+### Azure Static Web Apps
+The site is configured for Azure deployment via `staticwebapp.config.json`:
+- Routes are configured for SPA-like behavior
+- Security headers (CSP, X-Frame-Options) are set
+- MIME types for `.xml` and `.svg` files are properly configured
+- Python 3.9 runtime is specified for API functions
+
+### Build for Azure
+```bash
+npm run build:azure
+# This is an alias for: python build-config.py
+```
+Ensure `js/compiled-config.js` is committed for production deployments to get optimal performance.
+
 ## Important Files to Understand
 - `config/site-config.xml` - Master configuration controlling everything
-- `js/xml-parser.js` - Core XML loading and parsing logic
-- `js/feature-manager.js` - Feature toggle implementation
+- `build-config.py` - XML to JavaScript compiler with template pre-compilation
+- `js/compiled-config.js` - Generated optimized configuration (git-tracked for production)
+- `js/xml-parser.js` - Configuration loader with compiled fallback
+- `js/feature-manager.js` - Feature toggle system with dev panel (`?dev=true`)
 - `js/main.js` - Site initialization orchestration
 - `server.py` - Development server with CORS headers
+- `staticwebapp.config.json` - Azure Static Web App deployment configuration
