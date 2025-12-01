@@ -1,0 +1,12 @@
+{# Mobile Menu component - overlay and slide-out menu #}
+<div class="mobile-menu-overlay"></div>
+<nav class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu__header">
+        <button class="mobile-menu__close" aria-label="Close menu">&times;</button>
+    </div>
+    <ul class="mobile-menu__items">
+        {% for item in site.navigation %}
+        <li><a href="{{ item.url }}" class="nav-link{% if page.url == item.url %} active{% endif %}">{{ item.text }}</a></li>
+        {% endfor %}
+    </ul>
+</nav>

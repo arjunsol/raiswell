@@ -1,0 +1,148 @@
+---
+layout: base.njk
+title: Professional Building Services
+description: Professional building services. Extensions, kitchens, bathrooms & general building work. Gas Safe registered, NICEIC approved. Free quotes.
+extraStyles:
+  - css/components/hero-slider.css
+extraScripts:
+  - js/hero-slider.js
+  - js/simple-testimonials-slider.js
+---
+
+<!-- Hero Slider -->
+<section class="hero-slider" id="hero-slider">
+    <div class="hero-slider__container">
+        <div class="hero-slider__slides">
+            <!-- Slides will be populated dynamically from XML -->
+        </div>
+        <button class="hero-slider__nav hero-slider__prev" aria-label="Previous slide">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+        <button class="hero-slider__nav hero-slider__next" aria-label="Next slide">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+        <div class="hero-slider__dots"></div>
+    </div>
+</section>
+
+<!-- Welcome Section -->
+<section class="section welcome-section">
+    <div class="container">
+        <div class="grid grid-2">
+            <div class="welcome-content">
+                <h1 data-welcome-title>Welcome to {{ site.name }}</h1>
+                <div data-welcome-content>
+                    <p>With over 15 years of experience in the construction industry, we pride ourselves on delivering exceptional building services throughout London and the surrounding areas.</p>
+                    <p>From home extensions and kitchen fitting to bathroom renovations and general building work, our team of skilled craftsmen brings quality workmanship and attention to detail to every project.</p>
+                    <p>As Gas Safe registered and NICEIC approved contractors, we're fully certified to handle all aspects of your construction needs.</p>
+                </div>
+                <div class="btn-group">
+                    <a href="/services/" class="btn btn-primary">Our Services</a>
+                    <a href="/contact/" class="btn btn-secondary">Get Free Quote</a>
+                </div>
+            </div>
+            <div class="welcome-image">
+                <div class="welcome-badge">
+                    <img src="/images/company-badge.png" alt="{{ site.name }} Badge" data-badge>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Preview -->
+<section class="section services-preview section--gray">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Professional construction services tailored to your needs. From small repairs to major extensions, we deliver quality workmanship on every project.</p>
+        </div>
+        <div class="services-grid" data-services>
+            <!-- Service cards will be populated dynamically from XML -->
+        </div>
+        <div class="text-center" style="margin-top: 2rem;">
+            <a href="/services/" class="btn btn-primary">View All Services</a>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2 class="section-title">Why Choose Us?</h2>
+            <p class="section-subtitle">We're committed to delivering exceptional results on every project</p>
+        </div>
+
+        <div class="grid grid-3">
+            <div class="card text-center">
+                <div class="card-icon">&#127942;</div>
+                <h3 class="card-title">Fully Certified</h3>
+                <p>Gas Safe registered, NICEIC approved, and FMB member. All work covered by comprehensive insurance and warranties.</p>
+            </div>
+
+            <div class="card text-center">
+                <div class="card-icon">&#128176;</div>
+                <h3 class="card-title">15+ Years Experience</h3>
+                <p>Established business with over 500 successful projects completed across London and the South East.</p>
+            </div>
+
+            <div class="card text-center">
+                <div class="card-icon">&#11088;</div>
+                <h3 class="card-title">5-Star Reviews</h3>
+                <p>Consistently rated 5 stars by our customers. Check out our testimonials to see what they have to say.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Slider -->
+<section class="section section--gray">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-subtitle">Don't just take our word for it</p>
+        </div>
+        <div class="testimonials-slider" role="region" aria-label="Customer testimonials">
+            <div class="testimonials-slider__wrapper">
+                {% for testimonial in testimonials %}
+                <div class="testimonials-slider__slide{% if loop.first %} active{% endif %}" role="tabpanel" aria-label="Testimonial {{ loop.index }} of {{ testimonials | length }}" aria-hidden="{{ 'false' if loop.first else 'true' }}">
+                    <blockquote class="testimonials-slider__quote">
+                        "{{ testimonial.text }}"
+                    </blockquote>
+                    <div class="testimonials-slider__rating" aria-label="{{ testimonial.rating }} out of 5 stars">
+                        {% for i in range(5) %}
+                        <span class="testimonials-slider__star" aria-hidden="true">{% if i < testimonial.rating %}★{% else %}☆{% endif %}</span>
+                        {% endfor %}
+                    </div>
+                    <cite class="testimonials-slider__author">{{ testimonial.author }}</cite>
+                    {% if testimonial.location %}
+                    <span class="testimonials-slider__location">{{ testimonial.location }}</span>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            <div class="testimonials-slider__dots" role="tablist" aria-label="Testimonial navigation">
+                {% for testimonial in testimonials %}
+                <button class="testimonials-slider__dot{% if loop.first %} active{% endif %}" type="button" role="tab" aria-label="Go to testimonial {{ loop.index }}" aria-selected="{{ 'true' if loop.first else 'false' }}" data-slide="{{ loop.index0 }}"></button>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="section section--accent">
+    <div class="container text-center">
+        <h2>Ready to Start Your Project?</h2>
+        <p class="section-subtitle">Get in touch for a free, no-obligation quote</p>
+        <div class="btn-group">
+            <a href="/contact/" class="btn btn--white">Get Free Quote</a>
+            <a href="tel:{{ site.phone }}" class="btn btn--outline-white">Call Now</a>
+        </div>
+    </div>
+</section>

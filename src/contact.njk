@@ -1,0 +1,109 @@
+---
+layout: page.njk
+title: Contact Us
+description: Contact Raiswell Building Services. Get free quotes for extensions, kitchens, bathrooms, and general building work.
+breadcrumb: Contact
+extraStyles:
+  - css/pages/contact.css
+extraScripts:
+  - js/forms.js
+---
+
+<!-- Google Map Section -->
+<section class="map-section">
+    <div class="map-container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2489.1234!2d0.0427!3d51.3988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sOrpington%2C+Kent!5e0!3m2!1sen!2suk!4v1234567890"
+            width="100%"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Our Location">
+        </iframe>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="section contact-section">
+    <div class="container">
+        <div class="grid grid-2-1">
+            <!-- Contact Form -->
+            <div class="contact-form-wrapper">
+                <h2>Make an Enquiry</h2>
+                <form id="contact-form" class="contact-form" data-form="contact">
+                    <div class="form-group">
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Full name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Email address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" name="phone" id="phone" class="form-control" placeholder="Telephone">
+                    </div>
+                    <div class="form-group">
+                        <select name="service" id="service" class="form-control">
+                            <option value="">Select a service (optional)</option>
+                            <option value="extensions">Home Extensions</option>
+                            <option value="kitchens">Kitchen Fitting</option>
+                            <option value="bathrooms">Bathroom Renovations</option>
+                            <option value="general">General Building</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" id="message" class="form-control" rows="5" placeholder="Your enquiry" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-large">Send Message</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Contact Details -->
+            <div class="contact-details">
+                <h2>Contact Us</h2>
+
+                <div class="contact-item">
+                    <h4>Office:</h4>
+                    <address data-address>
+                        45 High Street<br>
+                        Orpington<br>
+                        Kent BR6 0JH
+                    </address>
+                    <a href="https://maps.google.com" target="_blank" rel="noopener">Get directions</a>
+                </div>
+
+                <div class="contact-item">
+                    <h4>Phone:</h4>
+                    <p><a href="tel:{{ site.phone }}" data-phone>{{ site.phoneDisplay }}</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <h4>Email:</h4>
+                    <p><a href="mailto:{{ site.email }}" data-email>{{ site.email }}</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <h4>Opening Hours:</h4>
+                    <p>Monday - Friday: 8am - 6pm</p>
+                    <p>Saturday: 8am - 4pm</p>
+                    <p>Sunday: Emergency Only</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="section section--accent">
+    <div class="container text-center">
+        <h2>Prefer to Talk?</h2>
+        <p class="section-subtitle">Give us a call for immediate assistance</p>
+        <div class="btn-group">
+            <a href="tel:{{ site.phone }}" class="btn btn--white">Call Now</a>
+            <a href="/booking/" class="btn btn--outline-white">Book Consultation</a>
+        </div>
+    </div>
+</section>

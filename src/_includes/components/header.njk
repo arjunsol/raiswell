@@ -1,0 +1,19 @@
+{# Header component - logo and navigation #}
+<header class="header" id="header">
+    <div class="header__inner container">
+        <a href="/" class="header__logo">
+            <span class="header__logo-text">{{ site.name }}</span>
+        </a>
+        <nav class="nav-menu" id="nav-menu">
+            <ul class="nav-menu__list">
+                {% for item in site.navigation %}
+                <li><a href="{{ item.url }}" class="nav-link{% if page.url == item.url %} active{% endif %}">{{ item.text }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger-icon"></span>
+            <span class="menu-text">Menu</span>
+        </button>
+    </div>
+</header>

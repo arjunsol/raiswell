@@ -1,0 +1,314 @@
+/* ===================================================================
+   Hero Slider Component
+   Full-width image slider with auto-rotation and navigation
+   =================================================================== */
+
+/* Base Slider Wrapper */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 900px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* Container */
+.hero-slider__container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Slides Wrapper */
+.hero-slider__slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Individual Slide */
+.hero-slider__slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 600ms ease-in-out;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+/* Active Slide */
+.hero-slider__slide.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+/* Fallback for slides without background-image set via JS */
+.hero-slider__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ===================================================================
+   Navigation Arrows
+   =================================================================== */
+
+.hero-slider__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 300ms ease;
+  backdrop-filter: blur(4px);
+}
+
+.hero-slider__nav:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.hero-slider__nav:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Previous Arrow */
+.hero-slider__nav--prev {
+  left: 20px;
+}
+
+/* Next Arrow */
+.hero-slider__nav--next {
+  right: 20px;
+}
+
+/* Arrow Icons */
+.hero-slider__nav::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  display: block;
+}
+
+.hero-slider__nav--prev::before {
+  transform: rotate(-135deg);
+  margin-left: 4px;
+}
+
+.hero-slider__nav--next::before {
+  transform: rotate(45deg);
+  margin-right: 4px;
+}
+
+/* ===================================================================
+   Navigation Dots
+   =================================================================== */
+
+.hero-slider__dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-slider__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 300ms ease;
+  padding: 0;
+}
+
+.hero-slider__dot:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.1);
+}
+
+.hero-slider__dot.active {
+  background-color: #0fb6ee;
+  border-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+/* ===================================================================
+   Loading State
+   =================================================================== */
+
+.hero-slider--loading {
+  background: linear-gradient(
+    90deg,
+    #1a1a1a 0%,
+    #2a2a2a 50%,
+    #1a1a1a 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* ===================================================================
+   Tablet Breakpoint (1024px and below)
+   =================================================================== */
+
+@media screen and (max-width: 1024px) {
+  .hero-slider {
+    height: 600px;
+  }
+
+  .hero-slider__nav {
+    width: 45px;
+    height: 45px;
+  }
+
+  .hero-slider__nav--prev {
+    left: 15px;
+  }
+
+  .hero-slider__nav--next {
+    right: 15px;
+  }
+
+  .hero-slider__dots {
+    bottom: 25px;
+    gap: 10px;
+  }
+
+  .hero-slider__dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* ===================================================================
+   Mobile Breakpoint (768px and below)
+   =================================================================== */
+
+@media screen and (max-width: 768px) {
+  .hero-slider {
+    height: 400px;
+  }
+
+  /* Hide navigation arrows on mobile (optional) */
+  .hero-slider__nav {
+    display: none;
+  }
+
+  /* Keep dots visible on mobile */
+  .hero-slider__dots {
+    bottom: 20px;
+    gap: 8px;
+  }
+
+  .hero-slider__dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .hero-slider__dot.active {
+    transform: scale(1.15);
+  }
+}
+
+/* ===================================================================
+   Small Mobile Breakpoint (480px and below)
+   =================================================================== */
+
+@media screen and (max-width: 480px) {
+  .hero-slider {
+    height: 350px;
+  }
+
+  .hero-slider__dots {
+    bottom: 15px;
+  }
+}
+
+/* ===================================================================
+   Accessibility & Interactions
+   =================================================================== */
+
+/* Focus styles for keyboard navigation */
+.hero-slider__nav:focus-visible,
+.hero-slider__dot:focus-visible {
+  outline: 2px solid #0fb6ee;
+  outline-offset: 4px;
+}
+
+/* Pause on hover for accessibility */
+.hero-slider:hover .hero-slider__slide.active {
+  animation-play-state: paused;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .hero-slider__slide {
+    transition: opacity 0ms;
+  }
+
+  .hero-slider__nav,
+  .hero-slider__dot {
+    transition: none;
+  }
+}
+
+/* ===================================================================
+   Print Styles
+   =================================================================== */
+
+@media print {
+  .hero-slider {
+    height: auto;
+    page-break-inside: avoid;
+  }
+
+  .hero-slider__nav,
+  .hero-slider__dots {
+    display: none;
+  }
+
+  .hero-slider__slide {
+    position: static;
+    opacity: 1 !important;
+    page-break-inside: avoid;
+    page-break-after: always;
+  }
+
+  .hero-slider__slide:last-child {
+    page-break-after: auto;
+  }
+}

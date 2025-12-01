@@ -6,25 +6,126 @@
     <meta name="description" content="Contact Colin's Professional Building Services in Orpington, Kent. Get free quotes for extensions, kitchens, bathrooms, and general building work across London.">
     <meta name="keywords" content="contact builder london, building quotes orpington, professional builder kent, emergency building repairs">
     <meta name="author" content="Colin's Professional Building Services">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Roboto+Slab:wght@400;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components/top-bar.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/page-header.css">
+    <link rel="stylesheet" href="css/components/testimonials.css">
+    <link rel="stylesheet" href="css/components/footer.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/themes.css">
-    <link rel="stylesheet" href="css/chatbot.css">
-    <link rel="stylesheet" href="css/modals.css">
-    
+
     <title>Contact Us | Colin's Professional Building Services</title>
+
+    <style>
+        .map-section {
+            width: 100%;
+            line-height: 0;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 450px;
+        }
+        .contact-section {
+            padding: 60px 0;
+        }
+        .contact-form-wrapper {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .contact-form-wrapper h2 {
+            margin-bottom: 25px;
+            color: var(--color-primary);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-secondary);
+        }
+        .contact-details {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        .contact-details h2 {
+            margin-bottom: 25px;
+            color: var(--color-primary);
+        }
+        .contact-item {
+            margin-bottom: 25px;
+        }
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+        .contact-item h4 {
+            color: var(--color-secondary);
+            margin-bottom: 5px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .contact-item p {
+            margin: 5px 0;
+        }
+        .contact-item address {
+            font-style: normal;
+            line-height: 1.6;
+        }
+        .contact-item a {
+            color: var(--color-secondary);
+            text-decoration: none;
+        }
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <span class="top-bar-item">
+                        <span class="icon">📞</span>
+                        <a href="tel:+447700900123" data-phone>+44 7700 900123</a>
+                    </span>
+                    <span class="top-bar-item">
+                        <span class="icon">✉️</span>
+                        <a href="mailto:info@raiswell.com" data-email>info@raiswell.com</a>
+                    </span>
+                </div>
+                <div class="top-bar-right">
+                    <span class="top-bar-item">
+                        <span class="icon">🕐</span>
+                        <span data-hours-short>Mon-Fri: 8am-6pm | Sat: 8am-4pm</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <nav class="nav">
@@ -34,7 +135,7 @@
                         <img src="images/hero/company-logo.png" alt="Colin's Professional Building Services" style="display: none;">
                         Colin's Building Services
                     </div>
-                    
+
                     <ul class="nav-menu">
                         <li><a href="index.html" class="nav-link">Home</a></li>
                         <li><a href="services.html" class="nav-link">Services</a></li>
@@ -43,7 +144,7 @@
                         <li><a href="contact.html" class="nav-link active">Contact</a></li>
                         <li><a href="booking.html" class="nav-link">Book Consultation</a></li>
                     </ul>
-                    
+
                     <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
                         ☰
                     </button>
@@ -52,289 +153,138 @@
         </nav>
     </header>
 
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <span class="mobile-menu-logo">Colin's Building Services</span>
+            <button class="mobile-menu-close" aria-label="Close mobile menu">
+                ✕
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <ul class="mobile-nav-menu">
+                <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+                <li><a href="gallery.html" class="mobile-nav-link">Gallery</a></li>
+                <li><a href="accreditation.html" class="mobile-nav-link">Accreditations</a></li>
+                <li><a href="contact.html" class="mobile-nav-link active">Contact</a></li>
+                <li><a href="booking.html" class="mobile-nav-link">Book Consultation</a></li>
+            </ul>
+        </nav>
+    </div>
+
     <!-- Page Header -->
-    <section class="section" style="padding-top: 8rem; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); color: white;">
+    <section class="page-header">
         <div class="container">
-            <div class="text-center">
-                <h1 class="hero-title" style="color: white;">Contact Us</h1>
-                <p class="hero-subtitle" style="opacity: 0.9;">Get in touch for your free, no-obligation quote</p>
+            <div class="page-header-content">
+                <h1 class="page-title">Contact Us</h1>
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <ol class="breadcrumb-list">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                    </ol>
+                </nav>
             </div>
         </div>
     </section>
 
-    <!-- Contact Methods -->
-    <section class="section">
-        <div class="container">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">📞</div>
-                    <h3 class="contact-title">Call Us</h3>
-                    <div class="contact-details">
-                        <a href="tel:+447700900123" class="contact-link" data-phone>+44 7700 900123</a><br>
-                        <small>Mon-Fri: 8am-6pm, Sat: 8am-4pm</small><br>
-                        <small style="color: var(--color-secondary); font-weight: 600;">We answer within 3 rings!</small>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">🚨</div>
-                    <h3 class="contact-title">Emergency Line</h3>
-                    <div class="contact-details">
-                        <a href="tel:+447700900999" class="contact-link" data-emergency-phone>+44 7700 900999</a><br>
-                        <small>Available 24/7 for emergencies</small><br>
-                        <small style="color: var(--color-secondary); font-weight: 600;">Response within 2 hours</small>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">✉️</div>
-                    <h3 class="contact-title">Email Us</h3>
-                    <div class="contact-details">
-                        <a href="mailto:colin@colinbuilds.co.uk" class="contact-link" data-email>colin@colinbuilds.co.uk</a><br>
-                        <small>We reply within 2 hours</small><br>
-                        <small>Include photos for faster quotes</small>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">📍</div>
-                    <h3 class="contact-title">Visit Us</h3>
-                    <div class="contact-details">
-                        <span data-address>
-                            45 High Street<br>
-                            Orpington, BR6 0JH<br>
-                            Kent, United Kingdom
-                        </span><br>
-                        <small>Office visits by appointment only</small>
-                    </div>
-                </div>
-            </div>
+    <!-- Google Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2489.1234!2d0.0427!3d51.3988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sOrpington%2C+Kent!5e0!3m2!1sen!2suk!4v1234567890"
+                width="100%"
+                height="450"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Our Location">
+            </iframe>
         </div>
     </section>
 
-    <!-- Contact Form -->
-    <section class="section" style="background-color: var(--color-light-gray);">
+    <!-- Contact Section -->
+    <section class="section contact-section">
         <div class="container">
-            <div class="grid grid-2" style="align-items: start;">
-                <div>
-                    <h2 class="section-title" style="text-align: left;">Get Your Free Quote</h2>
-                    <p class="section-subtitle" style="text-align: left;">Tell us about your project and we'll provide a detailed, no-obligation quote within 24 hours.</p>
-                    
-                    <div style="margin-top: 2rem;">
-                        <h4 style="margin-bottom: 1rem; color: var(--color-primary);">What to include in your message:</h4>
-                        <ul style="margin-bottom: 2rem;">
-                            <li>Type of work needed (extension, kitchen, bathroom, etc.)</li>
-                            <li>Property details and location</li>
-                            <li>Rough timeline and budget</li>
-                            <li>Any specific requirements or preferences</li>
-                            <li>Photos of the area (if possible)</li>
-                        </ul>
-                        
-                        <div class="card" style="background: var(--color-secondary); color: white; padding: 1.5rem;">
-                            <h4 style="color: white; margin-bottom: 1rem;">✅ Free Services Included:</h4>
-                            <ul style="margin: 0;">
-                                <li>Initial consultation</li>
-                                <li>Site survey and measurements</li>
-                                <li>Detailed written quote</li>
-                                <li>Design suggestions</li>
-                                <li>Timeline and planning advice</li>
-                            </ul>
-                        </div>
+            <div class="row">
+                <!-- Contact Form - 8 columns -->
+                <div class="col-8 col-md-12">
+                    <div class="contact-form-wrapper">
+                        <h2>Make an Enquiry</h2>
+                        <form id="contact-form" class="contact-form" data-form="contact">
+                            <div class="form-group">
+                                <input type="text" name="name" id="name" class="form-control" placeholder="Full name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" id="email" class="form-control" placeholder="Email address" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" name="phone" id="phone" class="form-control" placeholder="Telephone">
+                            </div>
+                            <div class="form-group">
+                                <select name="service" id="service" class="form-control">
+                                    <option value="">Select a service (optional)</option>
+                                    <option value="extensions">Home Extensions</option>
+                                    <option value="kitchens">Kitchen Fitting</option>
+                                    <option value="bathrooms">Bathroom Renovations</option>
+                                    <option value="general">General Building</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" id="message" class="form-control" rows="5" placeholder="Your enquiry" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-large">Send Message</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                
-                <div>
-                    <form id="contact-form" class="card" style="background: white;">
-                        <h3 style="margin-bottom: 1.5rem; color: var(--color-primary);">Request Your Quote</h3>
-                        
-                        <div class="form-group" style="margin-bottom: 1rem;">
-                            <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Your Name *</label>
-                            <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-light-gray); border-radius: var(--border-radius); font-size: 1rem;">
+
+                <!-- Contact Details - 4 columns -->
+                <div class="col-4 col-md-12">
+                    <div class="contact-details">
+                        <h2>Contact Us</h2>
+
+                        <div class="contact-item">
+                            <h4>Office:</h4>
+                            <address data-address>
+                                45 High Street<br>
+                                Orpington<br>
+                                Kent BR6 0JH
+                            </address>
+                            <a href="https://maps.google.com" target="_blank" rel="noopener">Get directions</a>
                         </div>
-                        
-                        <div class="form-group" style="margin-bottom: 1rem;">
-                            <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email Address *</label>
-                            <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-light-gray); border-radius: var(--border-radius); font-size: 1rem;">
+
+                        <div class="contact-item">
+                            <h4>Phone:</h4>
+                            <p><a href="tel:+447700900123" data-phone>+44 7700 900123</a></p>
                         </div>
-                        
-                        <div class="form-group" style="margin-bottom: 1rem;">
-                            <label for="phone" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-light-gray); border-radius: var(--border-radius); font-size: 1rem;" placeholder="Best number to reach you">
+
+                        <div class="contact-item">
+                            <h4>Email:</h4>
+                            <p><a href="mailto:info@raiswell.com" data-email>info@raiswell.com</a></p>
                         </div>
-                        
-                        <div class="form-group" style="margin-bottom: 1rem;">
-                            <label for="service" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Service Required</label>
-                            <select id="service" name="service" style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-light-gray); border-radius: var(--border-radius); font-size: 1rem;">
-                                <option value="">Select a service</option>
-                                <option value="extensions">Home Extensions</option>
-                                <option value="kitchens">Kitchen Fitting</option>
-                                <option value="bathrooms">Bathroom Renovations</option>
-                                <option value="general">General Building Work</option>
-                                <option value="emergency">Emergency Repairs</option>
-                                <option value="consultation">General Consultation</option>
-                            </select>
+
+                        <div class="contact-item">
+                            <h4>Opening Hours:</h4>
+                            <p>Monday - Friday: 8am - 6pm</p>
+                            <p>Saturday: 8am - 4pm</p>
+                            <p>Sunday: Emergency Only</p>
                         </div>
-                        
-                        <div class="form-group" style="margin-bottom: 1rem;">
-                            <label for="location" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Property Location</label>
-                            <input type="text" id="location" name="location" style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-light-gray); border-radius: var(--border-radius); font-size: 1rem;" placeholder="City/Town and postcode">
-                        </div>
-                        
-                        <div class="form-group" style="margin-bottom: 1rem;">
-                            <label for="budget" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Approximate Budget</label>
-                            <select id="budget" name="budget" style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-light-gray); border-radius: var(--border-radius); font-size: 1rem;">
-                                <option value="">Select budget range</option>
-                                <option value="under-5k">Under £5,000</option>
-                                <option value="5k-15k">£5,000 - £15,000</option>
-                                <option value="15k-30k">£15,000 - £30,000</option>
-                                <option value="30k-50k">£30,000 - £50,000</option>
-                                <option value="over-50k">Over £50,000</option>
-                                <option value="unsure">Not sure yet</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group" style="margin-bottom: 1rem;">
-                            <label for="timeline" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Preferred Timeline</label>
-                            <select id="timeline" name="timeline" style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-light-gray); border-radius: var(--border-radius); font-size: 1rem;">
-                                <option value="">When would you like to start?</option>
-                                <option value="asap">As soon as possible</option>
-                                <option value="1-3months">Within 1-3 months</option>
-                                <option value="3-6months">3-6 months</option>
-                                <option value="6-12months">6-12 months</option>
-                                <option value="planning">Just planning ahead</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group" style="margin-bottom: 1.5rem;">
-                            <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Project Details *</label>
-                            <textarea id="message" name="message" required rows="5" style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-light-gray); border-radius: var(--border-radius); font-size: 1rem; resize: vertical;" placeholder="Please describe your project in as much detail as possible..."></textarea>
-                        </div>
-                        
-                        <div class="form-group" style="margin-bottom: 1.5rem;">
-                            <label style="display: flex; align-items: center; cursor: pointer;">
-                                <input type="checkbox" name="consent" required style="margin-right: 0.5rem;">
-                                <span style="font-size: 0.9rem;">I consent to being contacted about my enquiry and have read the privacy policy *</span>
-                            </label>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">
-                            Send Message & Get Quote
-                        </button>
-                        
-                        <p style="text-align: center; font-size: 0.8rem; color: #666; margin-top: 1rem;">
-                            * Required fields. We typically respond within 2 hours during business hours.
-                        </p>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Service Areas -->
-    <section class="section">
+    <!-- Testimonials Slider -->
+    <section class="testimonials-slider dark-skin" data-testimonials>
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Areas We Serve</h2>
-                <p class="section-subtitle">Professional building services across London and the South East</p>
-            </div>
-            
-            <div class="grid grid-4">
-                <div class="card text-center">
-                    <h4 style="color: var(--color-primary); margin-bottom: 1rem;">🏢 London Boroughs</h4>
-                    <ul style="text-align: left; font-size: 0.9rem;">
-                        <li>Greenwich</li>
-                        <li>Lewisham</li>
-                        <li>Southwark</li>
-                        <li>Tower Hamlets</li>
-                        <li>Croydon</li>
-                        <li>Lambeth</li>
-                    </ul>
-                </div>
-                
-                <div class="card text-center">
-                    <h4 style="color: var(--color-primary); margin-bottom: 1rem;">🌳 Kent Areas</h4>
-                    <ul style="text-align: left; font-size: 0.9rem;">
-                        <li>Orpington</li>
-                        <li>Bromley</li>
-                        <li>Beckenham</li>
-                        <li>Sidcup</li>
-                        <li>Dartford</li>
-                        <li>Sevenoaks</li>
-                    </ul>
-                </div>
-                
-                <div class="card text-center">
-                    <h4 style="color: var(--color-primary); margin-bottom: 1rem;">🏘️ Surrey Areas</h4>
-                    <ul style="text-align: left; font-size: 0.9rem;">
-                        <li>Croydon</li>
-                        <li>Sutton</li>
-                        <li>Carshalton</li>
-                        <li>Epsom</li>
-                        <li>Banstead</li>
-                        <li>Reigate</li>
-                    </ul>
-                </div>
-                
-                <div class="card text-center">
-                    <h4 style="color: var(--color-primary); margin-bottom: 1rem;">📍 Other Areas</h4>
-                    <ul style="text-align: left; font-size: 0.9rem;">
-                        <li>Bexley</li>
-                        <li>Eltham</li>
-                        <li>Chislehurst</li>
-                        <li>New Eltham</li>
-                        <li>Lee</li>
-                        <li>Blackheath</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="text-center mt-4">
-                <p style="color: #666;">Don't see your area listed? <a href="tel:+447700900123" style="color: var(--color-secondary); font-weight: 600;">Call us</a> - we may still be able to help!</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Business Hours -->
-    <section class="section" style="background-color: var(--color-light-gray);">
-        <div class="container">
-            <div class="grid grid-2" style="align-items: center;">
-                <div>
-                    <h2 class="section-title" style="text-align: left;">Business Hours</h2>
-                    <div class="card" style="background: white;">
-                        <div data-hours>
-                            <div><strong>Monday:</strong> 08:00-18:00</div>
-                            <div><strong>Tuesday:</strong> 08:00-18:00</div>
-                            <div><strong>Wednesday:</strong> 08:00-18:00</div>
-                            <div><strong>Thursday:</strong> 08:00-18:00</div>
-                            <div><strong>Friday:</strong> 08:00-18:00</div>
-                            <div><strong>Saturday:</strong> 08:00-16:00</div>
-                            <div><strong>Sunday:</strong> Emergency Only</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div>
-                    <div class="card" style="background: var(--color-secondary); color: white; text-align: center;">
-                        <h3 style="color: white; margin-bottom: 1rem;">⏰ Quick Response Times</h3>
-                        <div style="margin-bottom: 1rem;">
-                            <strong>Phone Calls:</strong><br>
-                            <span style="font-size: 1.2rem;">Within 3 rings</span>
-                        </div>
-                        <div style="margin-bottom: 1rem;">
-                            <strong>Email Replies:</strong><br>
-                            <span style="font-size: 1.2rem;">Within 2 hours</span>
-                        </div>
-                        <div style="margin-bottom: 1rem;">
-                            <strong>Site Visits:</strong><br>
-                            <span style="font-size: 1.2rem;">Within 48 hours</span>
-                        </div>
-                        <div>
-                            <strong>Emergencies:</strong><br>
-                            <span style="font-size: 1.2rem;">Within 2 hours</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h3 class="testimonials-slider__title">What Our Clients Say</h3>
+            <div class="testimonials-slider__wrapper"></div>
+            <div class="testimonials-slider__dots"></div>
         </div>
     </section>
 
@@ -349,7 +299,7 @@
                         <!-- Social links will be populated dynamically -->
                     </div>
                 </div>
-                
+
                 <div class="footer-section">
                     <h3>Services</h3>
                     <ul>
@@ -359,7 +309,7 @@
                         <li><a href="services.html#general">General Building</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
@@ -369,15 +319,15 @@
                         <li><a href="booking.html">Book Consultation</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
                     <h3>Contact Info</h3>
                     <p>📞 <a href="tel:+447700900123" data-phone>+44 7700 900123</a></p>
-                    <p>✉️ <a href="mailto:colin@colinbuilds.co.uk" data-email>colin@colinbuilds.co.uk</a></p>
-                    <p>📍 <span data-address>45 High Street<br>Orpington, BR6 0JH</span></p>
+                    <p>✉️ <a href="mailto:info@raiswell.com" data-email>info@raiswell.com</a></p>
+                    <p>📍 <span data-address>45 High Street<br>Orpington, Kent BR6 0JH</span></p>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p data-copyright>&copy; 2024 Colin's Professional Building Services. All rights reserved.</p>
             </div>
@@ -385,42 +335,12 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="js/compiled-config.js"></script>
     <script src="js/xml-parser.js"></script>
+    <script src="js/feature-manager.js"></script>
     <script src="js/main.js"></script>
     <script src="js/theme-switcher.js"></script>
     <script src="js/forms.js"></script>
     <script src="js/chatbot.js"></script>
-    
-    <!-- Form Enhancement Script -->
-    <style>
-        .form-message {
-            padding: 1rem;
-            border-radius: var(--border-radius);
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-        
-        .form-message-success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-        
-        .form-message-error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-        
-        .form-control:focus {
-            border-color: var(--color-secondary) !important;
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.2);
-        }
-        
-        .form-control {
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-    </style>
 </body>
 </html>
